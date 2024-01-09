@@ -1,15 +1,12 @@
 from models.model import Models
 from sklearn.model_selection import GridSearchCV
-from skfolio.model_selection import (
-    CombinatorialPurgedCV,
-    WalkForward,
-    cross_val_predict,
-)
+from skfolio.model_selection import  WalkForward
 from skfolio.moments import EmpiricalCovariance, LedoitWolf
-from skfolio import Population, RatioMeasure, RiskMeasure
+from skfolio import RatioMeasure, RiskMeasure
 from skfolio.metrics import make_scorer
 import os
 import pandas as pd
+import pickle
 
 ### INITIALIZATION OF MODELS
 models = Models()
@@ -37,12 +34,30 @@ grid_search = GridSearchCV(
 )
 
 ### TRAINING
-# data
+# DATA
 script_dir = os.path.dirname(__file__)  # get the directory of the current script
 processed_data_dir = os.path.join(script_dir, '../data/processed')
+
 X_train = pd.read_csv(os.path.join(processed_data_dir, 'X_train.csv'), index_col=0)
 X_test = pd.read_csv(os.path.join(processed_data_dir, 'X_test.csv'), index_col=0)
-print(X_train)
-# grid_search.fit(X_train)
-# model_stacking = grid_search.best_estimator_
-# print(model_stacking)
+# fit the model
+grid_search.fit(X_train)
+model_stacking = grid_search.best_estimator_
+
+
+### SAVE MODEL ###  
+import dill as pickle
+script_dir = os.path.dirname(__file__)  # get the directory of the current script
+model_dir = os.path.join(script_dir, '../models/')# Define the path to save the model file
+model_path = os.path.join(model_dir, 'model.pkl')
+benchmark_path = os.path.join(model_dir, 'benchmark.pkl')
+
+# MODEL
+with open(model_path, 'wb') as file:
+    pickle.dump(model_stacking, file)
+print(f"Model saved to {model_path}")
+# BENCHMARK
+with open(benchmark_path, 'wb') as file:
+    pickle.dump(benchmark, file)
+print(f"Benchmark saved to {benchmark_path}")
+

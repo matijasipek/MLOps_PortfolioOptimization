@@ -26,27 +26,6 @@ X_train.to_csv(os.path.join(processed_data_dir, 'X_train.csv'))
 X_test.to_csv(os.path.join(processed_data_dir, 'X_test.csv'))
 
 
-#
-
-# ### PREDICTION
-# pred_bench = cross_val_predict(
-#     benchmark,
-#     X_test,
-#     cv=cv,
-#     portfolio_params=dict(name="Benchmark"),
-# )
-
-# pred_stacking = cross_val_predict(
-#     model_stacking,
-#     X_test,
-#     cv=cv,
-#     n_jobs=-1,
-#     portfolio_params=dict(name="Stacking"),
-# )
-
-# print("pred_bench", pred_bench)
-# print("pred_stacking", pred_stacking)
-
 
 # ### POPULATION ANALYSIS
 # population = Population([pred_bench, pred_stacking])
