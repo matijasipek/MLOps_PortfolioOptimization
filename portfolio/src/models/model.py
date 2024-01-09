@@ -1,4 +1,5 @@
 import torch
+import skfolio as skf
 
 class MyNeuralNet(torch.nn.Module):
     """ Basic neural network class. 
