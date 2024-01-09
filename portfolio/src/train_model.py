@@ -39,7 +39,6 @@ script_dir = os.path.dirname(__file__)  # get the directory of the current scrip
 processed_data_dir = os.path.join(script_dir, '../data/processed')
 
 X_train = pd.read_csv(os.path.join(processed_data_dir, 'X_train.csv'), index_col=0)
-X_test = pd.read_csv(os.path.join(processed_data_dir, 'X_test.csv'), index_col=0)
 # fit the model
 grid_search.fit(X_train)
 model_stacking = grid_search.best_estimator_
