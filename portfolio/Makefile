@@ -42,7 +42,7 @@ clean:
 
 ## Process raw data into processed data
 data:
-	python portfolio/$(PROJECT_NAME)/data/make_dataset.py
+	python $(PROJECT_NAME)/data/make_dataset.py
 
 #################################################################################
 # Documentation RULES                                                           #

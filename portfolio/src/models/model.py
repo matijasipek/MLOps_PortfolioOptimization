@@ -1,27 +1,42 @@
-import torch
-import skfolio as skf
+from skfolio import RiskMeasure
+from skfolio.optimization import (
+    EqualWeighted,
+    HierarchicalEqualRiskContribution,
+    InverseVolatility,
+    MaximumDiversification,
+    MeanRisk,
+    ObjectiveFunction,
+    StackingOptimization,
+)
+from skfolio.prior import EmpiricalPrior
 
-class MyNeuralNet(torch.nn.Module):
-    """ Basic neural network class. 
-    
-    Args:
-        in_features: number of input features
-        out_features: number of output features
-    
-    """
-    def __init__(self, in_features: int, out_features: int) -> None:
-        self.l1 = torch.nn.Linear(in_features, 500)
-        self.l2 = torch.nn.Linear(500, out_features)
-        self.r = torch.nn.ReLU()
-    
-    def forward(self, x: torch.Tensor) -> torch.Tensor:
-        """Forward pass of the model.
-        
-        Args:
-            x: input tensor expected to be of shape [N,in_features]
 
-        Returns:
-            Output tensor with shape [N,out_features]
+class Models():
+    def give_estimators(self):
+        estimators = [
+            ("model1", InverseVolatility()),
+            ("model2", MaximumDiversification(prior_estimator=EmpiricalPrior())),
+            (
+                "model3",
+                MeanRisk(objective_function=ObjectiveFunction.MAXIMIZE_UTILITY, min_weights=-1),
+            ),
+            ("model4", HierarchicalEqualRiskContribution()),
+        ]
+        return estimators
 
-        """
-        return self.l2(self.r(self.l1(x)))
+    def give_model_stacking(self):
+        estimators = self.give_estimators()
+        model_stacking = StackingOptimization(
+            estimators=estimators,
+            final_estimator=MeanRisk(
+                objective_function=ObjectiveFunction.MAXIMIZE_UTILITY,
+                risk_measure=RiskMeasure.CDAR,
+            ),
+        )
+
+        return model_stacking
+
+    def give_benchmark(self):
+        benchmark = EqualWeighted()
+        return benchmark
+    

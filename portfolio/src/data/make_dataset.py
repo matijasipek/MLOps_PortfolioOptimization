@@ -22,59 +22,11 @@ X_train, X_test = train_test_split(X, test_size=0.50, shuffle=False)
 
 # Processed data
 processed_data_dir = os.path.join(script_dir, '../../data/processed')
-X_train.to_csv(os.path.join(processed_data_dir, 'X_train.csv'), index=False)
-X_test.to_csv(os.path.join(processed_data_dir, 'X_test.csv'), index=False)
+X_train.to_csv(os.path.join(processed_data_dir, 'X_train.csv'))
+X_test.to_csv(os.path.join(processed_data_dir, 'X_test.csv'))
 
 
-
-
-# ### MODELS
-# estimators = [
-#     ("model1", InverseVolatility()),
-#     ("model2", MaximumDiversification(prior_estimator=EmpiricalPrior())),
-#     (
-#         "model3",
-#         MeanRisk(objective_function=ObjectiveFunction.MAXIMIZE_UTILITY, min_weights=-1),
-#     ),
-#     ("model4", HierarchicalEqualRiskContribution()),
-# ]
-
-# model_stacking = StackingOptimization(
-#     estimators=estimators,
-#     final_estimator=MeanRisk(
-#         objective_function=ObjectiveFunction.MAXIMIZE_UTILITY,
-#         risk_measure=RiskMeasure.CDAR,
-#     ),
-# )
-
-# ### BENCHMARK
-# benchmark = EqualWeighted()
-
-
-# ### PARAMETER TUNING
-# cv = WalkForward(train_size=252, test_size=60)
-
-# grid_search = GridSearchCV(
-#     estimator=model_stacking,
-#     cv=cv,
-#     n_jobs=-1,
-#     param_grid={
-#         "model2__prior_estimator__covariance_estimator": [
-#             EmpiricalCovariance(),
-#             LedoitWolf(),
-#         ],
-#         "model3__l1_coef": [0.001, 0.1],
-#         "model4__risk_measure": [
-#             RiskMeasure.VARIANCE,
-#             RiskMeasure.GINI_MEAN_DIFFERENCE,
-#         ],
-#     },
-#     scoring=make_scorer(RatioMeasure.CALMAR_RATIO),
-# )
-# grid_search.fit(X_train)
-# model_stacking = grid_search.best_estimator_
-# print("Model stacking " , model_stacking)
-
+#
 
 # ### PREDICTION
 # pred_bench = cross_val_predict(
