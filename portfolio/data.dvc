@@ -1,0 +1,25 @@
+outs:
+- hash: md5
+  path: data
+  files:
+  - relpath: processed/.gitkeep
+    md5: d41d8cd98f00b204e9800998ecf8427e
+    size: 0
+    cloud:
+      remote_storage:
+        etag: 08d7d992fe92d083031001
+        version_id: '1704797875252439'
+  - relpath: raw/.gitkeep
+    md5: d41d8cd98f00b204e9800998ecf8427e
+    size: 0
+    cloud:
+      remote_storage:
+        etag: 08a5c8b1fe92d083031001
+        version_id: '1704797875758117'
+  - relpath: raw/ftse100_dataset.csv.gz
+    md5: 0c2dcd40a15d09ebe917c2a36ad2402e
+    size: 1209911
+    cloud:
+      remote_storage:
+        etag: 08c4f2fafe92d083031001
+        version_id: '1704797876959556'
