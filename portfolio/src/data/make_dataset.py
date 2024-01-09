@@ -1,30 +1,7 @@
 from plotly.io import show
-from sklearn.model_selection import GridSearchCV, train_test_split
+from sklearn.model_selection import train_test_split
 
-from skfolio import Population, RatioMeasure, RiskMeasure
-from skfolio.datasets import load_ftse100_dataset
-from skfolio.metrics import make_scorer
-from skfolio.model_selection import (
-    CombinatorialPurgedCV,
-    WalkForward,
-    cross_val_predict,
-)
-from skfolio.moments import EmpiricalCovariance, LedoitWolf
-from skfolio.optimization import (
-    EqualWeighted,
-    HierarchicalEqualRiskContribution,
-    InverseVolatility,
-    MaximumDiversification,
-    MeanRisk,
-    ObjectiveFunction,
-    StackingOptimization,
-)
 from skfolio.preprocessing import prices_to_returns
-from skfolio.prior import EmpiricalPrior
-
-import matplotlib.pyplot as plt
-from plotly.io import write_image
-
 import pandas as pd
 import os
 
@@ -42,6 +19,11 @@ prices_raw = prices_raw.set_index('Date')
 X = prices_to_returns(prices_raw)
 print(type(prices_raw))
 X_train, X_test = train_test_split(X, test_size=0.50, shuffle=False)
+
+# Processed data
+processed_data_dir = os.path.join(script_dir, '../../data/processed')
+X_train.to_csv(os.path.join(processed_data_dir, 'X_train.csv'), index=False)
+X_test.to_csv(os.path.join(processed_data_dir, 'X_test.csv'), index=False)
 
 
 
@@ -118,5 +100,5 @@ X_train, X_test = train_test_split(X, test_size=0.50, shuffle=False)
 # population = Population([pred_bench, pred_stacking])
 
 # # Plot cumulative returns and save the figure
-# fig1 = population.plot_cumulative_returns()
+# fig1 = population.plot_cumulative_returns()pip install "dvc[gs]"pip install "dvc[gs]"
 # fig1.show()
