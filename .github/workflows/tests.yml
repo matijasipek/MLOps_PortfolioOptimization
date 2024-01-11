@@ -23,9 +23,9 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r portfolio/requirements.txt
         pip install git+https://github.com/skfolio/skfolio.git --no-cache-dir
-        pip install . --no-deps --no-cache-dir
+        pip install portfolio/. --no-deps --no-cache-dir
     - name: Test with pytest
       run: |
         pip install pytest
         pytest -v
-# test push 2
+# test push 3
