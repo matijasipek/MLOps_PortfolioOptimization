@@ -25,11 +25,12 @@ jobs:
         pip install git+https://github.com/skfolio/skfolio.git --no-cache-dir
         pip install portfolio/. --no-deps --no-cache-dir
     - uses: iterative/setup-dvc@v1
+    - name: Change to portfolio directory
+      run: cd portfolio
     - name: Get data
       run: dvc pull
       env:
         GDRIVE_CREDENTIALS: ${{ secrets.GOOGLE_CLOUD_DATA_ACCESS}}  
-        working-directory: ./portfolio
     - name: Test with pytest
       run: |
         pip install pytest
