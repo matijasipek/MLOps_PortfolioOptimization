@@ -34,7 +34,8 @@ jobs:
 
     - name: Check gcloud auth
       run: gcloud auth list
-
+    - name: Install DVC GCS dependency
+      run: pip install 'dvc-gs'
     - name: Set up Google Cloud
       uses: google-github-actions/setup-gcloud@v0.3.0
       with:
@@ -46,7 +47,7 @@ jobs:
       run: |
        cd portfolio
        dvc pull
-       
+
     - name: Test with pytest
       run: |
         pip install pytest
