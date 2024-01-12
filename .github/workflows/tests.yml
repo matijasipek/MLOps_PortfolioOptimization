@@ -25,23 +25,28 @@ jobs:
         pip install -r portfolio/requirements.txt
         pip install git+https://github.com/skfolio/skfolio.git --no-cache-dir
         pip install portfolio/. --no-deps --no-cache-dir
-    - name: Debug GCS Authentication
-      run: |
-            gcloud auth list
-            dvc version
+   
+    - name: Install DVC
+      run: pip install dvc
+
+    - name: Check DVC version
+      run: dvc version
+
+    - name: Check gcloud auth
+      run: gcloud auth list
+
     - name: Set up Google Cloud
       uses: google-github-actions/setup-gcloud@v0.3.0
       with:
         service_account_key: ${{ secrets.GCP_SA_KEY }}
         project_id: mlops-411012
-
     - uses: iterative/setup-dvc@v1
 
     - name: Get data
       run: |
        cd portfolio
        dvc pull
-
+       
     - name: Test with pytest
       run: |
         pip install pytest
