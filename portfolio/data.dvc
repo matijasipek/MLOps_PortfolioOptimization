@@ -7,19 +7,40 @@ outs:
     size: 0
     cloud:
       remote_storage:
-        etag: 08d7d992fe92d083031001
-        version_id: '1704797875252439'
+        etag: 08a380d0a5edd783031001
+        version_id: '1705062635405347'
+  - relpath: processed/X_test.csv
+    md5: 570905ed54a035cd7864a93d3a8bee14
+    size: 4078380
+    cloud:
+      remote_storage:
+        etag: 08e689a3a7edd783031001
+        version_id: '1705062638863590'
+  - relpath: processed/X_train.csv
+    md5: 866977cc4f0df6f6abd626d98d7c49f2
+    size: 3917285
+    cloud:
+      remote_storage:
+        etag: 08ae81b3a7edd783031001
+        version_id: '1705062639124654'
+  - relpath: processed/test.csv
+    md5: d41d8cd98f00b204e9800998ecf8427e
+    size: 0
+    cloud:
+      remote_storage:
+        etag: 08cbd8d8a5edd783031001
+        version_id: '1705062635547723'
   - relpath: raw/.gitkeep
     md5: d41d8cd98f00b204e9800998ecf8427e
     size: 0
     cloud:
       remote_storage:
-        etag: 08a5c8b1fe92d083031001
-        version_id: '1704797875758117'
+        etag: 0891f7c1a5edd783031001
+        version_id: '1705062635174801'
   - relpath: raw/ftse100_dataset.csv.gz
     md5: 0c2dcd40a15d09ebe917c2a36ad2402e
     size: 1209911
     cloud:
       remote_storage:
-        etag: 08c4f2fafe92d083031001
-        version_id: '1704797876959556'
+        etag: 0889f282a6edd783031001
+        version_id: '1705062636239113'
