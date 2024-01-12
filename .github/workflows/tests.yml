@@ -29,6 +29,7 @@ jobs:
       run: dvc pull
       env:
         GDRIVE_CREDENTIALS: ${{ secrets.GOOGLE_CLOUD_DATA_ACCESS}}  
+        working-directory: ./portfolio
     - name: Test with pytest
       run: |
         pip install pytest
