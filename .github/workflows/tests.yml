@@ -31,17 +31,9 @@ jobs:
 
     - name: Check DVC version
       run: dvc version
-
-    - name: Check gcloud auth
-      run: gcloud auth list
+    
     - name: Install DVC GCS dependency
       run: pip install 'dvc-gs'
-    - name: Set up Google Cloud
-      uses: google-github-actions/setup-gcloud@v0.3.0
-      with:
-        service_account_key: ${{ secrets.GCP_SA_KEY }}
-        project_id: mlops-411012
-    - uses: iterative/setup-dvc@v1
 
     - name: Get data
       run: |
