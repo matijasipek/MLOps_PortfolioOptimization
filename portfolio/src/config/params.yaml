@@ -1,0 +1,6 @@
+lr:
+  value: 0.001
+epochs:
+  value: 4
+batch_size:
+  value: 16
