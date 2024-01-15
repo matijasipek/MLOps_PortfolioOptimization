@@ -18,7 +18,7 @@ async def predict_file(file: UploadFile):
         if not file.filename.endswith(".csv"):
             raise HTTPException(status_code=400, detail="Uploaded file must be in CSV format.")
 
-        # unique file path in the upload directory
+        #unique file path in the upload directory
         file_path = os.path.join(upload_dir, file.filename)
         with open(file_path, "wb") as f:
             shutil.copyfileobj(file.file, f)
@@ -31,5 +31,3 @@ async def predict_file(file: UploadFile):
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
-
-
