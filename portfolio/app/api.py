@@ -14,7 +14,7 @@ os.makedirs(upload_dir, exist_ok=True)
 @app.post("/predict/")
 async def predict_file(file: UploadFile):
     try:
-        #if the file is a CSV file
+        #checkign if the file is a CSV file
         if not file.filename.endswith(".csv"):
             raise HTTPException(status_code=400, detail="Uploaded file must be in CSV format.")
 
