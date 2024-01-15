@@ -16,7 +16,7 @@ COPY reports/ reports/
 
 # install python dependencies
 WORKDIR /
-RUN --mount=type=cache,target=~/pip/.cache pip install -r requirements.txt --no-cache-dir
+RUN pip install -r requirements.txt --no-cache-dir
 RUN pip install git+https://github.com/skfolio/skfolio.git --no-cache-dir
 RUN pip install . --no-deps --no-cache-dir
 
