@@ -1,9 +1,9 @@
 steps:
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/mlops-411012/trainer', '-f', 'trainer.dockerfile', '.']
+    args: ['build', '-t', 'gcr.io/mlops-411012/trainer', '-f', 'portfolio/trainer.dockerfile', '.']
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/mlops-411012/trainer']
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/mlops-411012/predict', '-f', 'predict.dockerfile', '.']
+    args: ['build', '-t', 'gcr.io/mlops-411012/predict', '-f', 'portfolio/predict.dockerfile', '.']
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/mlops-411012/predict']
