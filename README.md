@@ -25,3 +25,4 @@ The stacking approach incorporates four different portfolio models:
 
 ## Reference
 For more details on the stacking method implemented in `skfolio`, visit [Stacking Optimization Example in skfolio](https://skfolio.org/auto_examples/6_ensemble/plot_1_stacking.html#sphx-glr-auto-examples-6-ensemble-plot-1-stacking-py).
+- We used GPT-4 for writing this README.md file
