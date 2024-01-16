@@ -48,7 +48,7 @@ def main():
     # Initialize the model trainer
     trainer = ModelTrainer()
 
-    # Tune the parameters
+    # Tune the parametersdocker push gcr.io/mlops-411012/trainer
     trainer.tune_parameters()
 
     # Check if running inside a Docker container

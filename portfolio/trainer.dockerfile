@@ -1,5 +1,5 @@
 # Base image
-FROM python:3.10-slim
+FROM python:3.10-slim-buster
 # install python, git, and required libraries
 RUN apt update && \
     apt install --no-install-recommends -y build-essential gcc git libopenblas-dev liblapack-dev cmake && \
