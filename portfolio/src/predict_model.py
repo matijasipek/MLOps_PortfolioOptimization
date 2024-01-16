@@ -10,18 +10,19 @@ from skfolio.model_selection import (
     WalkForward,
 )
 
-
 def predict(predict_data) -> None:   
-    # model location
-    script_dir = os.path.dirname(__file__)  # get the directory of the current script
-    model_dir = os.path.join(script_dir, '../models/')# Define the path to save the model file
-    model_path = os.path.join(model_dir, 'model.pkl')
-    # new data location
-    #predict_data = os.path.join(script_dir, '../data/processed/', data_file)
-    # reports
-    figures_dir = os.path.join(script_dir, '../reports/figures')
-    reports_dir = os.path.join(script_dir, '../reports')
-        
+    # Check if running inside a Docker container
+    if os.environ.get('RUNNING_IN_DOCKER'):
+        model_path = '/models/model.pkl'
+        figures_dir = '/reports/figures'
+        reports_dir = '/reports'
+    else:
+        script_dir = os.path.dirname(__file__)
+        model_dir = os.path.join(script_dir, '../models/')
+        model_path = os.path.join(model_dir, 'model.pkl')
+        figures_dir = os.path.join(script_dir, '../reports/figures')
+        reports_dir = os.path.join(script_dir, '../reports')
+
     # load a pre-trained model
     with open(model_path, 'rb') as file:
         loaded_model = pickle.load(file)

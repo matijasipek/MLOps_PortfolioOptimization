@@ -14,6 +14,9 @@ COPY models/ models/
 COPY notebooks/ notebooks/
 COPY reports/ reports/
 
+#  environment variables
+ENV RUNNING_IN_DOCKER=true
+
 # install python dependencies
 WORKDIR /
 RUN pip install -r requirements.txt --no-cache-dir
@@ -21,4 +24,4 @@ RUN pip install git+https://github.com/skfolio/skfolio.git --no-cache-dir
 RUN pip install . --no-deps --no-cache-dir
 
 # prediction script
-ENTRYPOINT ["python", "-u", "src/predict_model.py"]
+CMD ["python", "-u", "src/predict_model.py", "/data/processed/X_test.csv"]
