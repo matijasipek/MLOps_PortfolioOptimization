@@ -77,21 +77,28 @@ def main():
     # Initialize the model trainer
     trainer = ModelTrainer()
 
-    # Tune the parameters
+    # Tune the parametersdocker push gcr.io/mlops-411012/trainer
     trainer.tune_parameters()
 
+    # Check if running inside a Docker container
+    if os.environ.get('RUNNING_IN_DOCKER'):
+        data_path = '/data/processed/X_train.csv'
+        model_path = '/models/model.pkl'
+        benchmark_path = '/models/benchmark.pkl'
+    else:
+        script_dir = os.path.dirname(__file__)
+        data_path = os.path.join(script_dir, '../data/processed/X_train.csv')
+        model_dir = os.path.join(script_dir, '../models/')
+        model_path = os.path.join(model_dir, 'model.pkl')
+        benchmark_path = os.path.join(model_dir, 'benchmark.pkl')
+
     # Load the training data
-    script_dir = os.path.dirname(__file__)
-    processed_data_dir = os.path.join(script_dir, '../data/processed')
-    X_train = pd.read_csv(os.path.join(processed_data_dir, 'X_train.csv'), index_col=0)
+    X_train = pd.read_csv(data_path, index_col=0)
 
     # Train the model
     trainer.train(X_train)
 
     # Save the model
-    model_dir = os.path.join(script_dir, '../models/')
-    model_path = os.path.join(model_dir, 'model.pkl')
-    benchmark_path = os.path.join(model_dir, 'benchmark.pkl')
     trainer.save_model(model_path, benchmark_path)
 
 if __name__ == "__main__":
