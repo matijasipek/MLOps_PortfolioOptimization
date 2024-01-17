@@ -1,6 +1,8 @@
-lr:
-  value: 0.001
-epochs:
-  value: 4
-batch_size:
-  value: 16
+evaluation_metric:
+  value: "Calmar ratio"
+walk_forward_train_size:
+  value: 252
+walk_forward_test_size:
+  value: 60
+n_jobs:
+  value: -1
