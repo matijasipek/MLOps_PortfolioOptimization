@@ -1,0 +1,53 @@
+{
+    "os": "Windows-10-10.0.19045-SP0",
+    "python": "3.11.7",
+    "heartbeatAt": "2024-01-17T22:31:07.907310",
+    "startedAt": "2024-01-17T22:31:05.731710",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "c:\\Users\\Lado\\MLOps_PortfolioOptimization\\portfolio\\src\\train_model.py",
+    "codePathLocal": "portfolio\\src\\train_model.py",
+    "codePath": "portfolio\\src\\train_model.py",
+    "git": {
+        "remote": "https://github.com/matijasipek/MLOps_PortfolioOptimization.git",
+        "commit": "0b97dbf235c34a5ae3317807ef628aa94d1fbee8"
+    },
+    "email": "andro.kranjcevic@gmail.com",
+    "root": "C:/Users/Lado/MLOps_PortfolioOptimization",
+    "host": "LAPTOP-PO1R1C4A",
+    "username": "Lado",
+    "executable": "C:\\Users\\Lado\\.conda\\envs\\mlops_project\\python.exe",
+    "cpu_count": 4,
+    "cpu_count_logical": 8,
+    "cpu_freq": {
+        "current": 1792.0,
+        "min": 0.0,
+        "max": 1992.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 1792.0,
+            "min": 0.0,
+            "max": 1992.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 475.8381996154785,
+            "used": 286.4838562011719
+        }
+    },
+    "gpu": "NVIDIA GeForce GTX 1050 with Max-Q Design",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce GTX 1050 with Max-Q Design",
+            "memory_total": 2147483648
+        }
+    ],
+    "memory": {
+        "total": 15.818595886230469
+    }
+}

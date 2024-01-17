@@ -1,0 +1,48 @@
+wandb_version: 1
+
+evaluation_metric:
+  desc: null
+  value:
+    value: Calmar ratio
+walk_forward_train_size:
+  desc: null
+  value:
+    value: 252
+walk_forward_test_size:
+  desc: null
+  value:
+    value: 60
+n_jobs:
+  desc: null
+  value:
+    value: -1
+_wandb:
+  desc: null
+  value:
+    python_version: 3.11.7
+    cli_version: 0.16.2
+    framework: sklearn
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1705530665.76271
+    t:
+      1:
+      - 5
+      - 53
+      - 55
+      - 105
+      2:
+      - 5
+      - 53
+      - 55
+      - 105
+      3:
+      - 2
+      - 16
+      - 23
+      4: 3.11.7
+      5: 0.16.2
+      8:
+      - 3
+      - 5
+      13: windows-amd64
