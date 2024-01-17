@@ -9,6 +9,8 @@ import wandb
 import yaml
 import pandas as pd
 import dill as pickle
+import cProfile
+import pstats
 
 class ModelTrainer:
     def __init__(self):
@@ -100,4 +102,9 @@ def main():
     trainer.save_model(model_path, benchmark_path)
 
 if __name__ == "__main__":
+    profiler = cProfile.Profile()
+    profiler.enable()
     main()
+    profiler.disable()
+    stats = pstats.Stats(profiler).sort_stats('cumtime')
+    stats.dump_stats('program.prof')  # Save the stats to a file
