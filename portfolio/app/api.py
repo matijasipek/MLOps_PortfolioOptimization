@@ -79,9 +79,9 @@ async def predict_file(file: UploadFile):
 async def get_metrics():
     return JSONResponse(content=generate_latest())
 
-@app.get("/")
-async def read_root():
-    return {"message": "Hello, World!"}
+# @app.get("/")
+# async def read_root():
+    # return {"message": "Hello, World!"}
 
 
 Instrumentator().instrument(app).expose(app)
