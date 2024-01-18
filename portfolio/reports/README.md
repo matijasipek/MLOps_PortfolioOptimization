@@ -507,7 +507,27 @@ end of the project.
 >
 > Answer:
 > *[architecture](figures/Q25%20-%20Architecture.png)*
-> **
+> *First off all we have the profiler which is running on train_model.py and shows us performance of the code,* 
+> *and cookiecuter that encompass the whole project. When training the model, the*
+> *first entry point is the W&B. It shows us the relevant*
+> *model parameters which can be seen in set up charts.*
+> *All of our data is stored in a google bucket via DVC*
+> *that is being referenced through GitHub. Every time*
+> *we make a change to the code i.e commit/push, we trigger*
+> *GitHub Actions. This triggers the unittesting module and*
+> *if it's sucesessfull it will trigger the google cloud build.*
+> *Through the build process we monitor it using Prometheus*
+> *and when it finishes it creates a docker image which is*
+> *saved in the Artifact Registry. Here we have several different images: The training image, the predict image*
+> *and the prometheus monitoring image. Then we are using VertexAI*
+> *to grab the models from the artifact registry and then do*
+> *inference. Unfortunantly we weren't able to deploy the model*
+> *in the cloud, but when testing locally we were able to get*
+> *metric results. In the local version we have a designated folder called visualisations which saves the final* 
+> *results in addition to printing. We do however have everything set up*
+> *including a prometheus sidecontainer, which would store*
+> *this metrics.*
+>
 
 
 ### Question 26
@@ -550,5 +570,8 @@ end of the project.
 > *All members contributed to code by...*
 >
 > Answer:
+> *Student s222736 did git, data version control, docker, unit testing, cloud*
+> *Student s204704 did W&B, cookiecuter, profiler, fastAPI*
+> *Studnet s222660 did system monitoring, docker*
 
 --- question 27 fill here ---
