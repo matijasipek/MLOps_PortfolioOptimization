@@ -148,7 +148,7 @@ corporate and increase the quality of your code.</p>
 <em>In total we have implemented X tests. Primarily we are testing ... and ... as these the most critical parts of our</em>
 <em>application but also ... .</em></p>
 <p>Answer:
-In total we created 13 tests. They were separated into 3 sections : dataset, model training) and prediction. In the dataset module we tested if the columns match the expected, if there are NaN values, is type pandas, is file empty and then repeated for both test and train data. For the model: test if model is being initialized, if parameters are being tuned, is it able to read in the data and train, and are the models saved after training. Finally, the prediction tests: are the results and figures from predictions being saved</p>
+In total we created <strong>13 tests</strong>. They were separated into 3 sections : <strong>dataset</strong>, <strong>model training</strong>, and <strong>prediction</strong>. In the dataset module we tested if the columns match the expected, if there are NaN values, is type pandas, is file empty and then repeated for both test and train data. For the model: test if model is being initialized, if parameters are being tuned, is it able to read in the data and train, and are the models saved after training. Finally, the prediction tests: are the results and figures from predictions being saved.</p>
 </blockquote>
 <h3>Question 8</h3>
 <blockquote>
@@ -158,9 +158,9 @@ In total we created 13 tests. They were separated into 3 sections : dataset, mod
 <p>Example:
 <em>The total code coverage of code is X%, which includes all our source code. We are far from 100% coverage of our **
 </em>code and even if we were then...*</p>
-<p>Answer:</p>
+<p>Answer:
+By using framework coverage, we are able to generate the full analysis of what is covered including all the libraries and packages; and, with that we have coverage of <strong>27%</strong> in total. However, when we look at the source files we have written we have coverage: <code>/model.py</code>  <strong>100%</strong>, <code>src/predict_model.py</code> <strong>84%</strong>, <code>src/train_model.py</code> <strong>64%</strong> which is solid. If we had code coverage of <strong>100%</strong> we would still not believe it is error free. This is because tests written can also not check everything in a mindful way, or the tests can themselves have errors. Tests can miss edge cases since we are not able to think of all possibilities which can happen during run time. Also, when running on cloud vs running locally can give different results due to different architectures.</p>
 </blockquote>
-<p>By using framework coverage, we are able to generate the full analysis of what is covered including all the libraries and packages; and, with that we have coverage of 27% in total. However, when we look at the source files we have written we have coverage: /model.py  100%, src/predict_model.py 84%, src train_model.py 64% which is solid. If we had code coverage of 100% we would still not believe it is error free. This is because tests written can also not check everything in a mindful way, or the tests can themselves have errors. Test can miss edge cases since we are not able to think of all possibilities which can happen during run time. Also, when running on cloud vs running locally can give different results due to different architectures.</p>
 <h3>Question 9</h3>
 <blockquote>
 <p><strong>Did you workflow include using branches and pull requests? If yes, explain how. If not, explain how branches and</strong>
@@ -169,9 +169,9 @@ In total we created 13 tests. They were separated into 3 sections : dataset, mod
 <p>Example:
 <em>We made use of both branches and PRs in our project. In our group, each member had an branch that they worked on in</em>
 <em>addition to the main branch. To merge code we ...</em></p>
-<p>Answer:</p>
+<p>Answer:
+We did not made use of branches since our modeling process was quite simple, and we did not have a lot of coding work to do in that area. So all of us just pushed the directly to the main branch. In general, branches help individual members work in their own environment without possibly messing up the production version of the code; it can be understood as a separate environment which can only be merged if correct. Also, since we were a small team, we did not use Pull requests; they are usually used to analyse and review potential changes in separate branches with your collaborators who can also add their own commits before you are merging with the main branch.</p>
 </blockquote>
-<p>We did not made use of branches since our modeling process was quite simple, and we did not have a lot of coding work to do in that area. So all of us just pushed the directly to the main branch. In general, branches help individual members work in their own environment without possibly messing up the production version of the code; it can be understood as a separate environment which can only be merged if correct. Also, since we were a small team, we did not use Pull requests; they are usually used to analyse and review potential changes in separate branches with your collaborators who can also add their own commits before you are merging with the main branch.</p>
 <h3>Question 10</h3>
 <blockquote>
 <p><strong>Did you use DVC for managing data in your project? If yes, then how did it improve your project to have version</strong>
@@ -180,9 +180,9 @@ In total we created 13 tests. They were separated into 3 sections : dataset, mod
 <p>Example:
 <em>We did make use of DVC in the following way: ... . In the end it helped us in ... for controlling ... part of our</em>
 <em>pipeline</em></p>
-<p>Answer:</p>
+<p>Answer:
+We did have <strong>DVC</strong> in our project; since we were working with time series data more specifically with index data, it was especially useful since for our system to work we had to update the training data every day as the stock price changes constantly. Unfortunately, due to lack of time, we were not able to implement automatic subsystem which pull data everyday; however, <strong>DVC</strong> would be perfect for this. Further steps included to achieve this would be: using the new <strong>DVC</strong> data, pull data to the trainer docker image to re-train the model; and use newest data to re-predict how our model performs. In this way, we would constantly have the newest information on our portfolio performance, and recommendation for all possible changes needed.</p>
 </blockquote>
-<p>We did have DVC in our project; since we were working with time series data more specifically with index data, it was especially useful since for our system to work we had to update the training data every day as the stock price changes constantly. Unfortunately, due to lack of time, we were not able to implement automatic subsystem which pull data everyday; however, DVC would be perfect for this. Further steps included to achieve this would be: using the new DVC data, pull data to the trainer docker image to re-train the model; and use newest data to re-predict how our model performs. In this way, we would constantly have the newest information on our portfolio performance, and recomendation for all possible changes needed</p>
 <h3>Question 11</h3>
 <blockquote>
 <p><strong>Discuss you continues integration setup. What kind of CI are you running (unittesting, linting, etc.)? Do you test</strong>
@@ -192,12 +192,12 @@ In total we created 13 tests. They were separated into 3 sections : dataset, mod
 <p>Example:
 <em>We have organized our CI into 3 separate files: one for doing ..., one for running ... testing and one for running</em>
 <em>... . In particular for our ..., we used ... .An example of a triggered workflow can be seen here: <weblink></em></p>
-<p>Answer:</p>
+<p>Answer:
+The CI was setup in a single file through <strong>GitHub Actions</strong>. The CI pipeline is triggered on every push and pull requests event to the main branch; tests are run only on the latest version of Ubuntu since we are running everything within docker images; the pipeline uses <strong>Python 3.10</strong> version to accommodate all the dependencies. They are installed via <code>requirements.txt</code> in the portfolio directory. We had some problems with <code>skfolio</code> since there is no image for this library (as it is completely new v0.9), thus we had to install it directly from GitHub repo; we made use of <code>—no-cache-dir</code> to prevent pip from caching packages. <strong>DVC</strong> is installed and data is pulled for the tests from Google Cloud Storage (GCS) bucket. Unit tests are all developed and ran using <strong>pytest</strong>. 
+The CI pipeline does not include linting, testing on multiple operating system and Python versions. We are not using caching as the build process was getting an error (same with mounting). With mounting, BuildKit which enhances the speed of builds was not enabled in Google Cloud, so this also had to be removed. 
+Build : <a href="https://github.com/matijasipek/MLOps_PortfolioOptimization/actions/runs/7541775834/job/20529189656">Link to Build</a>
+One of the main issues we had was pulling the data from the <strong>DVC</strong>; first our approach was using a service key which connected our GitHub repo with but this resulted in <code>Anonymous caller does not have storage.objects.list access</code> to the Google Cloud Storage bucket, no matter which permissions were given to the object as can be seen from <a href="https://github.com/matijasipek/MLOps_PortfolioOptimization/actions/runs/7502864007/job/20426370496">Link to Issue</a>. Unfortunately, to make it work, I gave the full public access permission to the bucket.</p>
 </blockquote>
-<p>The CI was setup in a single file through GitHub Actions. The CI pipeline is triggered on every push and pull requests event to the main branch; tests are run only on the latests version of ubuntu since we are running everything within docker images; the pipeline uses Python 3.10 version to accommodate all the dependencies. They are install via requirements.txt  in the portfolio directory. We had some problems with skfolio since there is no image for this library (as it is completely new v0.9), this we had to install it directly from GitHub repo; we made use of —no-cache-dir to prevent pip from caching packages. DVC is installed and a data is pulled for the tests from google cloud storage (GSC) bucket. Unit test are all developed and ran using pytest. 
-The CI pipeline does not include lifting, testing on multiple operating system and python versions. We are not using caching as build process was getting an error (same with mounting). With mounting BuildKit which enhances the speed of builds was not enabled in google cloud, so this also had to be removed. 
-Build : https://github.com/matijasipek/MLOps_PortfolioOptimization/actions/runs/7541775834/job/20529189656
-One of the main issues we had was pulling the data from the DVC; first our approach was using a service key which connected our GitHub repo with but this resulted in Anonymous caller does not have storage.objects.list access to the Google Cloud Storage bucket, no matter which permissions were given to the object as can be seen from https://github.com/matijasipek/MLOps_PortfolioOptimization/actions/runs/7502864007/job/20426370496. Unfortunately, to make it work, I gave the full public access permission to the bucket.  </p>
 <h2>Running code and tracking experiments</h2>
 <blockquote>
 <p>In the following section we are interested in learning more about the experimental setup for running your code and
@@ -269,14 +269,14 @@ especially the reproducibility of your experiments.</p>
 <p>Answer length: 50-200 words.</p>
 <p>Example:
 <em>We used the following two services: Engine and Bucket. Engine is used for... and Bucket is used for...</em></p>
-<p>Answer:</p>
-</blockquote>
-<p>We used: Bucket, Artifact Registry, Cloud Build, Vertex AI and Cloud Run
+<p>Answer:
+We used: Bucket, Artifact Registry, Cloud Build, Vertex AI and Cloud Run
 Bucket : We set up our DVC in the bucket and connected it to our GitHub repo
 Cloud Build: We are building and pushing our images in using this service
 Artefact Registry: In the artifact registry, after building our images are being saved here
 Vertex AI: We are creating custom jobs for each of our images (train and predict) and testing them with this service.
 Cloud Run: Used for deploying containers in “production” version so that it can be called from user side via URL / API requests</p>
+</blockquote>
 <h3>Question 18</h3>
 <blockquote>
 <p><strong>The backbone of GCP is the Compute engine. Explained how you made use of this service and what type of VMs</strong>
@@ -285,11 +285,11 @@ Cloud Run: Used for deploying containers in “production” version so that it 
 <p>Example:
 <em>We used the compute engine to run our ... . We used instances with the following hardware: ... and we started the</em>
 <em>using a custom container: ...</em></p>
-<p>Answer:</p>
-</blockquote>
-<p>We used this for testing that our project works in an new environment, but also through CloudBuild, VertexAI and Cloud Run as they all use VMs in the background. 
+<p>Answer:
+We used this for testing that our project works in an new environment, but also through CloudBuild, VertexAI and Cloud Run as they all use VMs in the background. 
 By using Cloud Build which uses VMs to build and push images, and then used compute engine VMs to run Vertex AI for our machine learning tasks such that it runs jobs of containers and serves predictions. We used n1-standard-4 type VM, it has 4vCPUs and 15GB of memory, we used 1 replica count. As I have Mac M2 CPU we had a big problem when building images since the architecture in the google cloud is different.
 Further, if we had time to develop continuous new data integration with the compute engine, we could know the training and inference time on specific hardware specifications. And, this process can be setup in parallel in background.</p>
+</blockquote>
 <h3>Question 19</h3>
 <blockquote>
 <p><strong>Insert 1-2 images of your GCP bucket, such that we can see what data you have stored in it.</strong>
@@ -302,17 +302,17 @@ Further, if we had time to develop continuous new data integration with the comp
 <blockquote>
 <p><strong>Upload one image of your GCP container registry, such that we can see the different images that you have stored.</strong>
 <strong>You can take inspiration from <a href="figures/registry.png">this figure</a>.</strong></p>
-<p>Answer:</p>
-</blockquote>
-<p><img alt="artifact registry" src="figures/Q20%20-%20Artifact%20Registry%20.png" />
+<p>Answer:
+<img alt="artifact registry" src="figures/Q20%20-%20Artifact%20Registry%20.png" />
 <img alt="artifact registry" src="figures/Q20%20-%20Artifact%20Registry%202.png" /></p>
+</blockquote>
 <h3>Question 21</h3>
 <blockquote>
 <p><strong>Upload one image of your GCP cloud build history, so we can see the history of the images that have been build in</strong>
 <strong>your project. You can take inspiration from <a href="figures/build.png">this figure</a>.</strong></p>
-<p>Answer:</p>
+<p>Answer:
+<img alt="build history" src="figures/Q21%20-%20Build.png" /></p>
 </blockquote>
-<p><img alt="build history" src="figures/Q21%20-%20Build.png" /></p>
 <h3>Question 22</h3>
 <blockquote>
 <p><strong>Did you manage to deploy your model, either in locally or cloud? If not, describe why. If yes, describe how and</strong>
@@ -333,7 +333,19 @@ Further, if we had time to develop continuous new data integration with the comp
 <p>Example:
 <em>We did not manage to implement monitoring. We would like to have monitoring implemented such that over time we could</em>
 <em>measure ... and ... that would inform us about this ... behaviour of our application.</em></p>
-<p>Answer:</p>
+<p>Answer:
+<em><a href="figures/Q23 - Metrics.png">metrics</a></em>
+<em>Yes, we successfully implemented model monitoring via Prometheus, which runs locally alongside our application.</em>
+<em>You should run the predictor.dockerfile locally which is then going to give you the localhost url where you'll be</em>
+<em>able to see the metrics update in realtime as docker image is being ran. The metrics displayed in the screenshot</em> 
+<em>indicate that Prometheus is actively scraping and recording data. Our configuration tracks several important indicators:</em> 
+- <strong>Memory Usage</strong>: Measures the virtual and resident memory of the application to prevent leaks and optimize resource allocation.
+- <strong>CPU Utilization</strong>: Monitors the CPU time consumed by the application, enabling us to assess and improve processing efficiency.
+- <strong>File Descriptors</strong>: Keeps count of open file descriptors to avoid reaching system limits that could lead to failures.
+- <strong>Model-Specific Metrics</strong>:
+    - <em>Total Predictions Made</em>: Shows us the demand on the model and its throughput.
+    - <em>Prediction Errors</em>: Used for detecting anomalies in the model's performance which might indicate data drift or model degradation.
+    - <em>Model Load Time</em>: Helps ensure the model is loaded efficiently and remains responsive to prediction requests.</p>
 </blockquote>
 <p>--- question 23 fill here ---</p>
 <h3>Question 24</h3>
@@ -343,10 +355,10 @@ Further, if we had time to develop continuous new data integration with the comp
 <p>Example:
 <em>Group member 1 used ..., Group member 2 used ..., in total ... credits was spend during development. The service</em>
 <em>costing the most was ... due to ...</em></p>
-<p>Answer:</p>
-</blockquote>
-<p>S222736 - google cloud  32$, in GitHub action I had 0 minutes which is unclear to me as I had more than 40 calls push/pull with CI
+<p>Answer:
+S222736 - google cloud  32$, in GitHub action I had 0 minutes which is unclear to me as I had more than 40 calls push/pull with CI
 - Artifact registry most expensive wth 28.79$ </p>
+</blockquote>
 <h2>Overall discussion of project</h2>
 <blockquote>
 <p>In the following section we would like you to think about the general structure of your project.</p>
