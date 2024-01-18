@@ -5,8 +5,12 @@ from skfolio.moments import EmpiricalCovariance, LedoitWolf
 from skfolio import RatioMeasure, RiskMeasure
 from skfolio.metrics import make_scorer
 import os
+import wandb
+import yaml
 import pandas as pd
 import dill as pickle
+import cProfile
+import pstats
 
 class ModelTrainer:
     def __init__(self):
@@ -34,9 +38,34 @@ class ModelTrainer:
             scoring=make_scorer(RatioMeasure.CALMAR_RATIO),
         )
 
-    def train(self, X_train):
+    def train(self, X_train):   
+        #Loading configuration from params.yaml
+        config_path = os.path.join(os.path.dirname(__file__), 'config', 'params.yaml')
+        with open(config_path, 'r') as file:
+            config_params = yaml.safe_load(file)
+
+        #Initializing wandb with the loaded configuration
+        wandb.init(project="final_project", entity="mlops11", config=config_params)
+
         self.grid_search.fit(X_train)
-        self.model_stacking = self.grid_search.best_estimator_
+
+        for i, score in enumerate(self.grid_search.cv_results_['mean_test_score']):
+            wandb.log({
+                "calmar_ratio": score
+            })
+
+        script_dir = os.path.dirname(os.path.realpath(__file__))
+        project_dir = os.path.dirname(script_dir)
+        summary_path = os.path.join(project_dir, 'reports', 'summary.csv')
+
+        if os.path.exists(summary_path):
+            summary_df = pd.read_csv(summary_path)
+            summary_table = wandb.Table(dataframe=summary_df)    #Convert the pandas DataFrame into a wandb Table
+            wandb.log({"summary": summary_table})    # Log the summary table to wandb
+        else:
+            print(f"Error: The file {summary_path} does not exist.")
+
+        wandb.finish()
 
     def save_model(self, model_path, benchmark_path):
         with open(model_path, 'wb') as file:
@@ -73,4 +102,9 @@ def main():
     trainer.save_model(model_path, benchmark_path)
 
 if __name__ == "__main__":
+    profiler = cProfile.Profile()
+    profiler.enable()
     main()
+    profiler.disable()
+    stats = pstats.Stats(profiler).sort_stats('cumtime')
+    stats.dump_stats('program.prof')  # Save the stats to a file

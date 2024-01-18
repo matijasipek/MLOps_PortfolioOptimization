@@ -1,0 +1,313 @@
+2024-01-17 18:49:36,970 INFO    StreamThr :7432 [internal.py:wandb_internal():86] W&B internal server running at pid: 7432, started at: 2024-01-17 18:49:36.969794
+2024-01-17 18:49:36,972 DEBUG   HandlerThread:7432 [handler.py:handle_request():146] handle_request: status
+2024-01-17 18:49:36,986 INFO    WriterThread:7432 [datastore.py:open_for_write():87] open: C:\Users\Lado\MLOps_PortfolioOptimization\wandb\run-20240117_184936-fjq6zp9o\run-fjq6zp9o.wandb
+2024-01-17 18:49:36,987 DEBUG   SenderThread:7432 [sender.py:send():382] send: header
+2024-01-17 18:49:37,041 DEBUG   SenderThread:7432 [sender.py:send():382] send: run
+2024-01-17 18:49:37,877 INFO    SenderThread:7432 [dir_watcher.py:__init__():211] watching files in: C:\Users\Lado\MLOps_PortfolioOptimization\wandb\run-20240117_184936-fjq6zp9o\files
+2024-01-17 18:49:37,878 INFO    SenderThread:7432 [sender.py:_start_run_threads():1136] run started: fjq6zp9o with start time 1705513776.971789
+2024-01-17 18:49:37,899 DEBUG   HandlerThread:7432 [handler.py:handle_request():146] handle_request: check_version
+2024-01-17 18:49:37,900 DEBUG   SenderThread:7432 [sender.py:send_request():409] send_request: check_version
+2024-01-17 18:49:38,456 DEBUG   HandlerThread:7432 [handler.py:handle_request():146] handle_request: run_start
+2024-01-17 18:49:38,698 DEBUG   HandlerThread:7432 [system_info.py:__init__():27] System info init
+2024-01-17 18:49:38,699 DEBUG   HandlerThread:7432 [system_info.py:__init__():42] System info init done
+2024-01-17 18:49:38,699 INFO    HandlerThread:7432 [system_monitor.py:start():194] Starting system monitor
+2024-01-17 18:49:38,699 INFO    SystemMonitor:7432 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-01-17 18:49:38,699 INFO    HandlerThread:7432 [system_monitor.py:probe():214] Collecting system info
+2024-01-17 18:49:38,703 INFO    SystemMonitor:7432 [interfaces.py:start():190] Started cpu monitoring
+2024-01-17 18:49:38,704 INFO    SystemMonitor:7432 [interfaces.py:start():190] Started disk monitoring
+2024-01-17 18:49:38,705 INFO    SystemMonitor:7432 [interfaces.py:start():190] Started gpu monitoring
+2024-01-17 18:49:38,706 INFO    SystemMonitor:7432 [interfaces.py:start():190] Started memory monitoring
+2024-01-17 18:49:38,723 INFO    SystemMonitor:7432 [interfaces.py:start():190] Started network monitoring
+2024-01-17 18:49:38,734 DEBUG   HandlerThread:7432 [system_info.py:probe():151] Probing system
+2024-01-17 18:49:38,738 DEBUG   HandlerThread:7432 [system_info.py:_probe_git():136] Probing git
+2024-01-17 18:49:38,745 ERROR   gpu       :7432 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-17 18:49:38,745 ERROR   gpu       :7432 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-17 18:49:38,848 DEBUG   HandlerThread:7432 [system_info.py:_probe_git():144] Probing git done
+2024-01-17 18:49:38,848 DEBUG   HandlerThread:7432 [system_info.py:probe():199] Probing system done
+2024-01-17 18:49:38,848 DEBUG   HandlerThread:7432 [system_monitor.py:probe():223] {'os': 'Windows-10-10.0.19045-SP0', 'python': '3.11.7', 'heartbeatAt': '2024-01-17T17:49:38.735841', 'startedAt': '2024-01-17T17:49:36.947803', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': 'c:\\Users\\Lado\\MLOps_PortfolioOptimization\\portfolio\\src\\train_model.py', 'codePathLocal': 'portfolio\\src\\train_model.py', 'codePath': 'portfolio\\src\\train_model.py', 'git': {'remote': 'https://github.com/matijasipek/MLOps_PortfolioOptimization.git', 'commit': '9dd406b8f1c58ad8b2249956832c7c152922645d'}, 'email': 'andro.kranjcevic@gmail.com', 'root': 'C:/Users/Lado/MLOps_PortfolioOptimization', 'host': 'LAPTOP-PO1R1C4A', 'username': 'Lado', 'executable': 'C:\\Users\\Lado\\.conda\\envs\\mlops_project\\python.exe', 'cpu_count': 4, 'cpu_count_logical': 8, 'cpu_freq': {'current': 1792.0, 'min': 0.0, 'max': 1992.0}, 'cpu_freq_per_core': [{'current': 1792.0, 'min': 0.0, 'max': 1992.0}], 'disk': {'/': {'total': 475.8381996154785, 'used': 285.73504638671875}}, 'gpu': 'NVIDIA GeForce GTX 1050 with Max-Q Design', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce GTX 1050 with Max-Q Design', 'memory_total': 2147483648}], 'memory': {'total': 15.818595886230469}}
+2024-01-17 18:49:38,848 INFO    HandlerThread:7432 [system_monitor.py:probe():224] Finished collecting system info
+2024-01-17 18:49:38,848 INFO    HandlerThread:7432 [system_monitor.py:probe():227] Publishing system info
+2024-01-17 18:49:38,849 DEBUG   HandlerThread:7432 [system_info.py:_save_conda():208] Saving list of conda packages installed into the current environment
+2024-01-17 18:49:38,853 ERROR   HandlerThread:7432 [system_info.py:_save_conda():219] Error saving conda packages: [WinError 2] The system cannot find the file specified
+Traceback (most recent call last):
+  File "C:\Users\Lado\.conda\envs\mlops_project\Lib\site-packages\wandb\sdk\internal\system\system_info.py", line 215, in _save_conda
+    subprocess.call(
+  File "C:\Users\Lado\.conda\envs\mlops_project\Lib\subprocess.py", line 389, in call
+    with Popen(*popenargs, **kwargs) as p:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lado\.conda\envs\mlops_project\Lib\subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "C:\Users\Lado\.conda\envs\mlops_project\Lib\subprocess.py", line 1538, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+2024-01-17 18:49:38,854 DEBUG   HandlerThread:7432 [system_info.py:_save_conda():220] Saving conda packages done
+2024-01-17 18:49:38,856 INFO    HandlerThread:7432 [system_monitor.py:probe():229] Finished publishing system info
+2024-01-17 18:49:38,860 DEBUG   SenderThread:7432 [sender.py:send():382] send: files
+2024-01-17 18:49:38,861 INFO    SenderThread:7432 [sender.py:_save_file():1403] saving file wandb-metadata.json with policy now
+2024-01-17 18:49:38,873 DEBUG   HandlerThread:7432 [handler.py:handle_request():146] handle_request: python_packages
+2024-01-17 18:49:38,873 DEBUG   SenderThread:7432 [sender.py:send_request():409] send_request: python_packages
+2024-01-17 18:49:38,874 DEBUG   HandlerThread:7432 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-17 18:49:38,875 DEBUG   SenderThread:7432 [sender.py:send_request():409] send_request: stop_status
+2024-01-17 18:49:38,875 DEBUG   HandlerThread:7432 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-17 18:49:38,885 INFO    Thread-16 :7432 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\Lado\MLOps_PortfolioOptimization\wandb\run-20240117_184936-fjq6zp9o\files\wandb-metadata.json
+2024-01-17 18:49:38,885 INFO    Thread-16 :7432 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\Lado\MLOps_PortfolioOptimization\wandb\run-20240117_184936-fjq6zp9o\files\requirements.txt
+2024-01-17 18:49:38,886 INFO    Thread-16 :7432 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\Lado\MLOps_PortfolioOptimization\wandb\run-20240117_184936-fjq6zp9o\files\conda-environment.yaml
+2024-01-17 18:49:39,102 DEBUG   SenderThread:7432 [sender.py:send():382] send: telemetry
+2024-01-17 18:49:40,838 ERROR   gpu       :7432 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-17 18:49:40,839 ERROR   gpu       :7432 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-17 18:49:41,095 INFO    wandb-upload_0:7432 [upload_job.py:push():131] Uploaded file C:\Users\Lado\AppData\Local\Temp\tmpq1yobs4cwandb\j2ihwd7v-wandb-metadata.json
+2024-01-17 18:49:42,127 DEBUG   HandlerThread:7432 [handler.py:handle_request():146] handle_request: status_report
+2024-01-17 18:49:42,867 ERROR   gpu       :7432 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-17 18:49:42,867 ERROR   gpu       :7432 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-17 18:49:45,008 ERROR   gpu       :7432 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-17 18:49:45,009 ERROR   gpu       :7432 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-17 18:49:47,171 ERROR   gpu       :7432 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-17 18:49:47,172 ERROR   gpu       :7432 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-17 18:49:47,210 DEBUG   HandlerThread:7432 [handler.py:handle_request():146] handle_request: status_report
+2024-01-17 18:49:49,293 ERROR   gpu       :7432 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-17 18:49:49,293 ERROR   gpu       :7432 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-17 18:49:51,491 ERROR   gpu       :7432 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-17 18:49:51,492 ERROR   gpu       :7432 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-17 18:49:52,433 DEBUG   HandlerThread:7432 [handler.py:handle_request():146] handle_request: status_report
+2024-01-17 18:49:53,641 ERROR   gpu       :7432 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-17 18:49:53,641 ERROR   gpu       :7432 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-17 18:49:53,870 DEBUG   HandlerThread:7432 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-17 18:49:53,885 DEBUG   HandlerThread:7432 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-17 18:49:53,885 DEBUG   SenderThread:7432 [sender.py:send_request():409] send_request: stop_status
+2024-01-17 18:49:55,742 ERROR   gpu       :7432 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-17 18:49:55,742 ERROR   gpu       :7432 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-17 18:49:57,850 ERROR   gpu       :7432 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-17 18:49:57,850 ERROR   gpu       :7432 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-17 18:49:58,168 DEBUG   HandlerThread:7432 [handler.py:handle_request():146] handle_request: status_report
+2024-01-17 18:49:59,947 ERROR   gpu       :7432 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-17 18:49:59,948 ERROR   gpu       :7432 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-17 18:50:02,246 ERROR   gpu       :7432 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-17 18:50:02,247 ERROR   gpu       :7432 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-17 18:50:03,275 DEBUG   HandlerThread:7432 [handler.py:handle_request():146] handle_request: status_report
+2024-01-17 18:50:04,269 ERROR   gpu       :7432 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-17 18:50:04,269 ERROR   gpu       :7432 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-17 18:50:06,294 ERROR   gpu       :7432 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-17 18:50:06,295 ERROR   gpu       :7432 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-17 18:50:08,375 ERROR   gpu       :7432 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-17 18:50:08,375 ERROR   gpu       :7432 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-17 18:50:08,384 DEBUG   HandlerThread:7432 [handler.py:handle_request():146] handle_request: status_report
+2024-01-17 18:50:08,899 DEBUG   HandlerThread:7432 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-17 18:50:08,899 DEBUG   HandlerThread:7432 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-17 18:50:08,900 DEBUG   SenderThread:7432 [sender.py:send_request():409] send_request: stop_status
+2024-01-17 18:50:09,372 INFO    Thread-16 :7432 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\Lado\MLOps_PortfolioOptimization\wandb\run-20240117_184936-fjq6zp9o\files\config.yaml
+2024-01-17 18:50:10,505 ERROR   gpu       :7432 [interfaces.py:aggregate():161] Failed to serialize metric: division by zero
+2024-01-17 18:50:10,523 ERROR   gpu       :7432 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-17 18:50:10,523 ERROR   gpu       :7432 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-17 18:50:12,611 ERROR   gpu       :7432 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-17 18:50:12,611 ERROR   gpu       :7432 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-17 18:50:14,262 DEBUG   HandlerThread:7432 [handler.py:handle_request():146] handle_request: status_report
+2024-01-17 18:50:14,887 ERROR   gpu       :7432 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-17 18:50:14,888 ERROR   gpu       :7432 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-17 18:50:16,930 ERROR   gpu       :7432 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-17 18:50:16,930 ERROR   gpu       :7432 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-17 18:50:18,952 ERROR   gpu       :7432 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-17 18:50:18,953 ERROR   gpu       :7432 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-17 18:50:19,429 DEBUG   HandlerThread:7432 [handler.py:handle_request():146] handle_request: status_report
+2024-01-17 18:50:21,005 ERROR   gpu       :7432 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-17 18:50:21,005 ERROR   gpu       :7432 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-17 18:50:23,084 ERROR   gpu       :7432 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-17 18:50:23,084 ERROR   gpu       :7432 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-17 18:50:23,907 DEBUG   HandlerThread:7432 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-17 18:50:23,923 DEBUG   HandlerThread:7432 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-17 18:50:23,924 DEBUG   SenderThread:7432 [sender.py:send_request():409] send_request: stop_status
+2024-01-17 18:50:25,135 DEBUG   HandlerThread:7432 [handler.py:handle_request():146] handle_request: status_report
+2024-01-17 18:50:25,151 ERROR   gpu       :7432 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-17 18:50:25,151 ERROR   gpu       :7432 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-17 18:50:27,389 ERROR   gpu       :7432 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-17 18:50:27,389 ERROR   gpu       :7432 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-17 18:50:29,417 ERROR   gpu       :7432 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-17 18:50:29,417 ERROR   gpu       :7432 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-17 18:50:30,244 DEBUG   HandlerThread:7432 [handler.py:handle_request():146] handle_request: status_report
+2024-01-17 18:50:30,898 DEBUG   HandlerThread:7432 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-17 18:50:30,899 DEBUG   HandlerThread:7432 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-17 18:50:30,900 DEBUG   SenderThread:7432 [sender.py:send():382] send: history
+2024-01-17 18:50:30,900 DEBUG   HandlerThread:7432 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-17 18:50:30,900 DEBUG   SenderThread:7432 [sender.py:send_request():409] send_request: summary_record
+2024-01-17 18:50:30,900 DEBUG   HandlerThread:7432 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-17 18:50:30,901 DEBUG   HandlerThread:7432 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-17 18:50:30,902 DEBUG   HandlerThread:7432 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-17 18:50:30,902 DEBUG   HandlerThread:7432 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-17 18:50:30,903 DEBUG   HandlerThread:7432 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-17 18:50:30,903 INFO    SenderThread:7432 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-17 18:50:30,904 DEBUG   SenderThread:7432 [sender.py:send():382] send: history
+2024-01-17 18:50:30,904 DEBUG   SenderThread:7432 [sender.py:send_request():409] send_request: summary_record
+2024-01-17 18:50:30,905 INFO    SenderThread:7432 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-17 18:50:30,905 DEBUG   SenderThread:7432 [sender.py:send():382] send: history
+2024-01-17 18:50:30,906 DEBUG   SenderThread:7432 [sender.py:send_request():409] send_request: summary_record
+2024-01-17 18:50:30,906 INFO    SenderThread:7432 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-17 18:50:30,907 DEBUG   SenderThread:7432 [sender.py:send():382] send: history
+2024-01-17 18:50:30,907 DEBUG   SenderThread:7432 [sender.py:send_request():409] send_request: summary_record
+2024-01-17 18:50:30,907 INFO    SenderThread:7432 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-17 18:50:30,907 DEBUG   SenderThread:7432 [sender.py:send():382] send: history
+2024-01-17 18:50:30,908 DEBUG   SenderThread:7432 [sender.py:send_request():409] send_request: summary_record
+2024-01-17 18:50:30,908 INFO    SenderThread:7432 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-17 18:50:30,908 DEBUG   SenderThread:7432 [sender.py:send():382] send: history
+2024-01-17 18:50:30,909 DEBUG   SenderThread:7432 [sender.py:send_request():409] send_request: summary_record
+2024-01-17 18:50:30,909 INFO    SenderThread:7432 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-17 18:50:30,910 DEBUG   SenderThread:7432 [sender.py:send():382] send: history
+2024-01-17 18:50:30,910 DEBUG   SenderThread:7432 [sender.py:send_request():409] send_request: summary_record
+2024-01-17 18:50:30,910 INFO    SenderThread:7432 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-17 18:50:30,910 DEBUG   SenderThread:7432 [sender.py:send():382] send: history
+2024-01-17 18:50:30,911 DEBUG   SenderThread:7432 [sender.py:send_request():409] send_request: summary_record
+2024-01-17 18:50:30,911 INFO    SenderThread:7432 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-17 18:50:31,442 ERROR   gpu       :7432 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-17 18:50:31,442 ERROR   gpu       :7432 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-17 18:50:31,689 DEBUG   HandlerThread:7432 [handler.py:handle_request():146] handle_request: log_artifact
+2024-01-17 18:50:31,691 DEBUG   SenderThread:7432 [sender.py:send_request():409] send_request: log_artifact
+2024-01-17 18:50:31,791 INFO    Thread-16 :7432 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\Lado\MLOps_PortfolioOptimization\wandb\run-20240117_184936-fjq6zp9o\files\media\table\summary_8_353af02fd8057ce96a59.table.json
+2024-01-17 18:50:31,791 INFO    Thread-16 :7432 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\Lado\MLOps_PortfolioOptimization\wandb\run-20240117_184936-fjq6zp9o\files\wandb-summary.json
+2024-01-17 18:50:31,792 INFO    Thread-16 :7432 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\Lado\MLOps_PortfolioOptimization\wandb\run-20240117_184936-fjq6zp9o\files\media
+2024-01-17 18:50:31,792 INFO    Thread-16 :7432 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\Lado\MLOps_PortfolioOptimization\wandb\run-20240117_184936-fjq6zp9o\files\media\table
+2024-01-17 18:50:32,155 INFO    wandb-upload_0:7432 [upload_job.py:push():131] Uploaded file C:\Users\Lado\AppData\Local\Temp\tmpq1yobs4cwandb\6hw79tcw-media/table/summary_8_353af02fd8057ce96a59.table.json
+2024-01-17 18:50:32,380 INFO    SenderThread:7432 [sender.py:send_request_log_artifact():1470] logged artifact run-fjq6zp9o-summary - {'id': 'QXJ0aWZhY3Q6Njk0MTI3ODEx', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjEzMTI0MjI4Mw==', 'latestArtifact': None}}
+2024-01-17 18:50:32,380 DEBUG   SenderThread:7432 [sender.py:send():382] send: files
+2024-01-17 18:50:32,380 INFO    SenderThread:7432 [sender.py:_save_file():1403] saving file media\table\summary_8_353af02fd8057ce96a59.table.json with policy now
+2024-01-17 18:50:32,503 DEBUG   HandlerThread:7432 [handler.py:handle_request():146] handle_request: partial_history
+2024-01-17 18:50:32,504 DEBUG   SenderThread:7432 [sender.py:send():382] send: history
+2024-01-17 18:50:32,505 DEBUG   SenderThread:7432 [sender.py:send_request():409] send_request: summary_record
+2024-01-17 18:50:32,506 INFO    SenderThread:7432 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-17 18:50:32,507 DEBUG   SenderThread:7432 [sender.py:send():382] send: telemetry
+2024-01-17 18:50:32,508 DEBUG   SenderThread:7432 [sender.py:send():382] send: exit
+2024-01-17 18:50:32,508 INFO    SenderThread:7432 [sender.py:send_exit():589] handling exit code: 0
+2024-01-17 18:50:32,508 INFO    SenderThread:7432 [sender.py:send_exit():591] handling runtime: 54
+2024-01-17 18:50:32,509 INFO    SenderThread:7432 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-17 18:50:32,509 INFO    SenderThread:7432 [sender.py:send_exit():597] send defer
+2024-01-17 18:50:32,510 DEBUG   HandlerThread:7432 [handler.py:handle_request():146] handle_request: defer
+2024-01-17 18:50:32,510 INFO    HandlerThread:7432 [handler.py:handle_request_defer():172] handle defer: 0
+2024-01-17 18:50:32,510 DEBUG   SenderThread:7432 [sender.py:send_request():409] send_request: defer
+2024-01-17 18:50:32,511 INFO    SenderThread:7432 [sender.py:send_request_defer():613] handle sender defer: 0
+2024-01-17 18:50:32,511 INFO    SenderThread:7432 [sender.py:transition_state():617] send defer: 1
+2024-01-17 18:50:32,511 DEBUG   HandlerThread:7432 [handler.py:handle_request():146] handle_request: defer
+2024-01-17 18:50:32,511 INFO    HandlerThread:7432 [handler.py:handle_request_defer():172] handle defer: 1
+2024-01-17 18:50:32,512 DEBUG   SenderThread:7432 [sender.py:send_request():409] send_request: defer
+2024-01-17 18:50:32,512 INFO    SenderThread:7432 [sender.py:send_request_defer():613] handle sender defer: 1
+2024-01-17 18:50:32,512 INFO    SenderThread:7432 [sender.py:transition_state():617] send defer: 2
+2024-01-17 18:50:32,512 DEBUG   HandlerThread:7432 [handler.py:handle_request():146] handle_request: defer
+2024-01-17 18:50:32,512 INFO    HandlerThread:7432 [handler.py:handle_request_defer():172] handle defer: 2
+2024-01-17 18:50:32,512 INFO    HandlerThread:7432 [system_monitor.py:finish():203] Stopping system monitor
+2024-01-17 18:50:32,513 DEBUG   SystemMonitor:7432 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-01-17 18:50:32,513 DEBUG   SystemMonitor:7432 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-01-17 18:50:32,513 DEBUG   SystemMonitor:7432 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-01-17 18:50:32,515 INFO    HandlerThread:7432 [interfaces.py:finish():202] Joined cpu monitor
+2024-01-17 18:50:32,523 INFO    HandlerThread:7432 [interfaces.py:finish():202] Joined disk monitor
+2024-01-17 18:50:32,554 ERROR   gpu       :7432 [interfaces.py:aggregate():161] Failed to serialize metric: division by zero
+2024-01-17 18:50:32,554 INFO    HandlerThread:7432 [interfaces.py:finish():202] Joined gpu monitor
+2024-01-17 18:50:32,554 INFO    HandlerThread:7432 [interfaces.py:finish():202] Joined memory monitor
+2024-01-17 18:50:32,555 INFO    HandlerThread:7432 [interfaces.py:finish():202] Joined network monitor
+2024-01-17 18:50:32,555 DEBUG   SenderThread:7432 [sender.py:send_request():409] send_request: defer
+2024-01-17 18:50:32,555 INFO    SenderThread:7432 [sender.py:send_request_defer():613] handle sender defer: 2
+2024-01-17 18:50:32,555 INFO    SenderThread:7432 [sender.py:transition_state():617] send defer: 3
+2024-01-17 18:50:32,556 DEBUG   SenderThread:7432 [sender.py:send():382] send: stats
+2024-01-17 18:50:32,556 DEBUG   HandlerThread:7432 [handler.py:handle_request():146] handle_request: defer
+2024-01-17 18:50:32,556 INFO    HandlerThread:7432 [handler.py:handle_request_defer():172] handle defer: 3
+2024-01-17 18:50:32,556 DEBUG   SenderThread:7432 [sender.py:send_request():409] send_request: defer
+2024-01-17 18:50:32,556 INFO    SenderThread:7432 [sender.py:send_request_defer():613] handle sender defer: 3
+2024-01-17 18:50:32,556 INFO    SenderThread:7432 [sender.py:transition_state():617] send defer: 4
+2024-01-17 18:50:32,556 DEBUG   HandlerThread:7432 [handler.py:handle_request():146] handle_request: defer
+2024-01-17 18:50:32,557 INFO    HandlerThread:7432 [handler.py:handle_request_defer():172] handle defer: 4
+2024-01-17 18:50:32,557 DEBUG   SenderThread:7432 [sender.py:send_request():409] send_request: defer
+2024-01-17 18:50:32,557 INFO    SenderThread:7432 [sender.py:send_request_defer():613] handle sender defer: 4
+2024-01-17 18:50:32,557 INFO    SenderThread:7432 [sender.py:transition_state():617] send defer: 5
+2024-01-17 18:50:32,557 DEBUG   HandlerThread:7432 [handler.py:handle_request():146] handle_request: defer
+2024-01-17 18:50:32,557 INFO    HandlerThread:7432 [handler.py:handle_request_defer():172] handle defer: 5
+2024-01-17 18:50:32,557 DEBUG   SenderThread:7432 [sender.py:send():382] send: summary
+2024-01-17 18:50:32,558 INFO    SenderThread:7432 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-17 18:50:32,559 DEBUG   SenderThread:7432 [sender.py:send_request():409] send_request: defer
+2024-01-17 18:50:32,559 INFO    SenderThread:7432 [sender.py:send_request_defer():613] handle sender defer: 5
+2024-01-17 18:50:32,559 INFO    SenderThread:7432 [sender.py:transition_state():617] send defer: 6
+2024-01-17 18:50:32,559 DEBUG   HandlerThread:7432 [handler.py:handle_request():146] handle_request: defer
+2024-01-17 18:50:32,559 INFO    HandlerThread:7432 [handler.py:handle_request_defer():172] handle defer: 6
+2024-01-17 18:50:32,559 DEBUG   SenderThread:7432 [sender.py:send_request():409] send_request: defer
+2024-01-17 18:50:32,559 INFO    SenderThread:7432 [sender.py:send_request_defer():613] handle sender defer: 6
+2024-01-17 18:50:32,563 DEBUG   HandlerThread:7432 [handler.py:handle_request():146] handle_request: status_report
+2024-01-17 18:50:32,731 INFO    SenderThread:7432 [sender.py:transition_state():617] send defer: 7
+2024-01-17 18:50:32,735 DEBUG   HandlerThread:7432 [handler.py:handle_request():146] handle_request: defer
+2024-01-17 18:50:32,735 INFO    HandlerThread:7432 [handler.py:handle_request_defer():172] handle defer: 7
+2024-01-17 18:50:32,737 DEBUG   SenderThread:7432 [sender.py:send_request():409] send_request: defer
+2024-01-17 18:50:32,737 INFO    SenderThread:7432 [sender.py:send_request_defer():613] handle sender defer: 7
+2024-01-17 18:50:32,737 INFO    SenderThread:7432 [sender.py:transition_state():617] send defer: 8
+2024-01-17 18:50:32,738 DEBUG   HandlerThread:7432 [handler.py:handle_request():146] handle_request: defer
+2024-01-17 18:50:32,738 INFO    HandlerThread:7432 [handler.py:handle_request_defer():172] handle defer: 8
+2024-01-17 18:50:32,739 DEBUG   SenderThread:7432 [sender.py:send_request():409] send_request: defer
+2024-01-17 18:50:32,739 INFO    SenderThread:7432 [sender.py:send_request_defer():613] handle sender defer: 8
+2024-01-17 18:50:32,740 INFO    SenderThread:7432 [job_builder.py:build():296] Attempting to build job artifact
+2024-01-17 18:50:32,741 INFO    SenderThread:7432 [job_builder.py:_get_source_type():426] is repo sourced job
+2024-01-17 18:50:32,742 INFO    SenderThread:7432 [job_builder.py:build():402] adding wandb-job metadata file
+2024-01-17 18:50:32,763 INFO    SenderThread:7432 [sender.py:transition_state():617] send defer: 9
+2024-01-17 18:50:32,763 DEBUG   HandlerThread:7432 [handler.py:handle_request():146] handle_request: defer
+2024-01-17 18:50:32,763 INFO    HandlerThread:7432 [handler.py:handle_request_defer():172] handle defer: 9
+2024-01-17 18:50:32,764 DEBUG   SenderThread:7432 [sender.py:send():382] send: artifact
+2024-01-17 18:50:32,794 INFO    Thread-16 :7432 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\Lado\MLOps_PortfolioOptimization\wandb\run-20240117_184936-fjq6zp9o\files\wandb-summary.json
+2024-01-17 18:50:32,794 INFO    Thread-16 :7432 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\Lado\MLOps_PortfolioOptimization\wandb\run-20240117_184936-fjq6zp9o\files\config.yaml
+2024-01-17 18:50:32,823 INFO    wandb-upload_1:7432 [upload_job.py:push():131] Uploaded file C:\Users\Lado\AppData\Local\Temp\tmpq1yobs4cwandb\ltkch5pc-media/table/summary_8_353af02fd8057ce96a59.table.json
+2024-01-17 18:50:33,433 INFO    SenderThread:7432 [sender.py:send_artifact():1494] sent artifact job-https___github.com_matijasipek_MLOps_PortfolioOptimization.git_portfolio_src_train_model.py - {'id': 'QXJ0aWZhY3Q6Njk0MDM4NDEz', 'state': 'COMMITTED', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjEzMDc4OTM4MA==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6Njk0MTIzNTcy', 'versionIndex': 18}}}
+2024-01-17 18:50:33,434 DEBUG   SenderThread:7432 [sender.py:send_request():409] send_request: defer
+2024-01-17 18:50:33,434 INFO    SenderThread:7432 [sender.py:send_request_defer():613] handle sender defer: 9
+2024-01-17 18:50:33,434 INFO    SenderThread:7432 [dir_watcher.py:finish():358] shutting down directory watcher
+2024-01-17 18:50:33,451 INFO    wandb-upload_0:7432 [upload_job.py:push():89] Uploaded file C:\Users\Lado\AppData\Local\wandb\wandb\artifacts\staging\tmp70uoyeli
+2024-01-17 18:50:33,513 DEBUG   HandlerThread:7432 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-17 18:50:33,812 INFO    SenderThread:7432 [dir_watcher.py:finish():388] scan: C:\Users\Lado\MLOps_PortfolioOptimization\wandb\run-20240117_184936-fjq6zp9o\files
+2024-01-17 18:50:33,814 INFO    SenderThread:7432 [dir_watcher.py:finish():402] scan save: C:\Users\Lado\MLOps_PortfolioOptimization\wandb\run-20240117_184936-fjq6zp9o\files\conda-environment.yaml conda-environment.yaml
+2024-01-17 18:50:33,816 INFO    SenderThread:7432 [dir_watcher.py:finish():402] scan save: C:\Users\Lado\MLOps_PortfolioOptimization\wandb\run-20240117_184936-fjq6zp9o\files\config.yaml config.yaml
+2024-01-17 18:50:33,817 INFO    SenderThread:7432 [dir_watcher.py:finish():402] scan save: C:\Users\Lado\MLOps_PortfolioOptimization\wandb\run-20240117_184936-fjq6zp9o\files\requirements.txt requirements.txt
+2024-01-17 18:50:33,819 INFO    SenderThread:7432 [dir_watcher.py:finish():402] scan save: C:\Users\Lado\MLOps_PortfolioOptimization\wandb\run-20240117_184936-fjq6zp9o\files\wandb-metadata.json wandb-metadata.json
+2024-01-17 18:50:33,820 INFO    SenderThread:7432 [dir_watcher.py:finish():402] scan save: C:\Users\Lado\MLOps_PortfolioOptimization\wandb\run-20240117_184936-fjq6zp9o\files\wandb-summary.json wandb-summary.json
+2024-01-17 18:50:33,823 INFO    SenderThread:7432 [dir_watcher.py:finish():402] scan save: C:\Users\Lado\MLOps_PortfolioOptimization\wandb\run-20240117_184936-fjq6zp9o\files\media\table\summary_8_353af02fd8057ce96a59.table.json media/table/summary_8_353af02fd8057ce96a59.table.json
+2024-01-17 18:50:33,824 INFO    SenderThread:7432 [sender.py:transition_state():617] send defer: 10
+2024-01-17 18:50:33,824 DEBUG   SenderThread:7432 [sender.py:send_request():409] send_request: poll_exit
+2024-01-17 18:50:33,826 DEBUG   HandlerThread:7432 [handler.py:handle_request():146] handle_request: defer
+2024-01-17 18:50:33,827 INFO    HandlerThread:7432 [handler.py:handle_request_defer():172] handle defer: 10
+2024-01-17 18:50:33,828 DEBUG   SenderThread:7432 [sender.py:send_request():409] send_request: defer
+2024-01-17 18:50:33,828 INFO    SenderThread:7432 [sender.py:send_request_defer():613] handle sender defer: 10
+2024-01-17 18:50:33,829 INFO    SenderThread:7432 [file_pusher.py:finish():175] shutting down file pusher
+2024-01-17 18:50:34,502 INFO    wandb-upload_2:7432 [upload_job.py:push():131] Uploaded file C:\Users\Lado\MLOps_PortfolioOptimization\wandb\run-20240117_184936-fjq6zp9o\files\requirements.txt
+2024-01-17 18:50:34,527 DEBUG   HandlerThread:7432 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-17 18:50:34,527 DEBUG   SenderThread:7432 [sender.py:send_request():409] send_request: poll_exit
+2024-01-17 18:50:35,104 INFO    wandb-upload_1:7432 [upload_job.py:push():131] Uploaded file C:\Users\Lado\MLOps_PortfolioOptimization\wandb\run-20240117_184936-fjq6zp9o\files\config.yaml
+2024-01-17 18:50:35,108 INFO    wandb-upload_0:7432 [upload_job.py:push():131] Uploaded file C:\Users\Lado\MLOps_PortfolioOptimization\wandb\run-20240117_184936-fjq6zp9o\files\wandb-summary.json
+2024-01-17 18:50:35,310 INFO    Thread-15 (_thread_body):7432 [sender.py:transition_state():617] send defer: 11
+2024-01-17 18:50:35,311 DEBUG   HandlerThread:7432 [handler.py:handle_request():146] handle_request: defer
+2024-01-17 18:50:35,312 INFO    HandlerThread:7432 [handler.py:handle_request_defer():172] handle defer: 11
+2024-01-17 18:50:35,313 DEBUG   SenderThread:7432 [sender.py:send_request():409] send_request: defer
+2024-01-17 18:50:35,314 INFO    SenderThread:7432 [sender.py:send_request_defer():613] handle sender defer: 11
+2024-01-17 18:50:35,314 INFO    SenderThread:7432 [file_pusher.py:join():181] waiting for file pusher
+2024-01-17 18:50:35,315 INFO    SenderThread:7432 [sender.py:transition_state():617] send defer: 12
+2024-01-17 18:50:35,316 DEBUG   HandlerThread:7432 [handler.py:handle_request():146] handle_request: defer
+2024-01-17 18:50:35,317 INFO    HandlerThread:7432 [handler.py:handle_request_defer():172] handle defer: 12
+2024-01-17 18:50:35,318 DEBUG   SenderThread:7432 [sender.py:send_request():409] send_request: defer
+2024-01-17 18:50:35,319 INFO    SenderThread:7432 [sender.py:send_request_defer():613] handle sender defer: 12
+2024-01-17 18:50:35,319 INFO    SenderThread:7432 [file_stream.py:finish():595] file stream finish called
+2024-01-17 18:50:35,467 INFO    SenderThread:7432 [file_stream.py:finish():599] file stream finish is done
+2024-01-17 18:50:35,468 INFO    SenderThread:7432 [sender.py:transition_state():617] send defer: 13
+2024-01-17 18:50:35,469 DEBUG   HandlerThread:7432 [handler.py:handle_request():146] handle_request: defer
+2024-01-17 18:50:35,469 INFO    HandlerThread:7432 [handler.py:handle_request_defer():172] handle defer: 13
+2024-01-17 18:50:35,470 DEBUG   SenderThread:7432 [sender.py:send_request():409] send_request: defer
+2024-01-17 18:50:35,471 INFO    SenderThread:7432 [sender.py:send_request_defer():613] handle sender defer: 13
+2024-01-17 18:50:35,471 INFO    SenderThread:7432 [sender.py:transition_state():617] send defer: 14
+2024-01-17 18:50:35,472 DEBUG   HandlerThread:7432 [handler.py:handle_request():146] handle_request: defer
+2024-01-17 18:50:35,473 INFO    HandlerThread:7432 [handler.py:handle_request_defer():172] handle defer: 14
+2024-01-17 18:50:35,474 DEBUG   SenderThread:7432 [sender.py:send():382] send: final
+2024-01-17 18:50:35,475 DEBUG   SenderThread:7432 [sender.py:send():382] send: footer
+2024-01-17 18:50:35,476 DEBUG   SenderThread:7432 [sender.py:send_request():409] send_request: defer
+2024-01-17 18:50:35,476 INFO    SenderThread:7432 [sender.py:send_request_defer():613] handle sender defer: 14
+2024-01-17 18:50:35,479 DEBUG   HandlerThread:7432 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-17 18:50:35,480 DEBUG   SenderThread:7432 [sender.py:send_request():409] send_request: poll_exit
+2024-01-17 18:50:35,484 DEBUG   HandlerThread:7432 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-17 18:50:35,485 DEBUG   HandlerThread:7432 [handler.py:handle_request():146] handle_request: server_info
+2024-01-17 18:50:35,486 DEBUG   HandlerThread:7432 [handler.py:handle_request():146] handle_request: get_summary
+2024-01-17 18:50:35,487 DEBUG   HandlerThread:7432 [handler.py:handle_request():146] handle_request: sampled_history
+2024-01-17 18:50:35,487 DEBUG   HandlerThread:7432 [handler.py:handle_request():146] handle_request: job_info
+2024-01-17 18:50:35,488 DEBUG   SenderThread:7432 [sender.py:send_request():409] send_request: server_info
+2024-01-17 18:50:35,637 DEBUG   SenderThread:7432 [sender.py:send_request():409] send_request: job_info
+2024-01-17 18:50:35,638 DEBUG   HandlerThread:7432 [handler.py:handle_request():146] handle_request: shutdown
+2024-01-17 18:50:35,638 INFO    HandlerThread:7432 [handler.py:finish():869] shutting down handler
+2024-01-17 18:50:36,502 INFO    WriterThread:7432 [datastore.py:close():296] close: C:\Users\Lado\MLOps_PortfolioOptimization\wandb\run-20240117_184936-fjq6zp9o\run-fjq6zp9o.wandb
+2024-01-17 18:50:36,646 INFO    SenderThread:7432 [sender.py:finish():1572] shutting down sender
+2024-01-17 18:50:36,647 INFO    SenderThread:7432 [file_pusher.py:finish():175] shutting down file pusher
+2024-01-17 18:50:36,647 INFO    SenderThread:7432 [file_pusher.py:join():181] waiting for file pusher
