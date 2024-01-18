@@ -427,16 +427,31 @@ time on specific hardware specifications. And, this process can be setup in para
 > **You can take inspiration from [this figure](figures/bucket.png).**
 >
 > Answer:
-> *![gcp bucket](figures/Q19%20-%20Bucket.png)*
-> *![gcp bucket2](figures/Q19%20-%20Bucket%202.png)*
+
+```markdown
+![gcp bucket](figures/Q19%20-%20Bucket.png)
+```
+
+```markdown
+![gcp bucket2](figures/Q19%20-%20Bucket%202.png)
+```
+
 ### Question 20
 
 > **Upload one image of your GCP container registry, such that we can see the different images that you have stored.**
 > **You can take inspiration from [this figure](figures/registry.png).**
 >
 > Answer:
->*![artifact registry](figures/Q20%20-%20Artifact%20Registry%20.png)*
->*![artifact registry](figures/Q20%20-%20Artifact%20Registry%202.png)*
+>
+
+```markdown
+![artifact registry](figures/Q20%20-%20Artifact%20Registry%20.png)
+```
+
+```markdown
+![artifact registry](figures/Q20%20-%20Artifact%20Registry%202.png)
+```
+
 
 ### Question 21
 
@@ -444,7 +459,12 @@ time on specific hardware specifications. And, this process can be setup in para
 > **your project. You can take inspiration from [this figure](figures/build.png).**
 >
 > Answer:
->*![build history](figures/Q21%20-%20Build.png)*
+>
+
+```markdown
+![build history](figures/Q21%20-%20Build.png)
+```
+
 
 ### Question 22
 
