@@ -14,14 +14,14 @@ def predict(predict_data) -> None:
     # Check if running inside a Docker container
     if os.environ.get('RUNNING_IN_DOCKER'):
         model_path = '/models/model.pkl'
-        figures_dir = '/reports/figures'
-        reports_dir = '/reports'
+        figures_dir = '/visualizations/figures'
+        visualizations_dir = '/visualizations'
     else:
         script_dir = os.path.dirname(__file__)
         model_dir = os.path.join(script_dir, '../models/')
         model_path = os.path.join(model_dir, 'model.pkl')
-        figures_dir = os.path.join(script_dir, '../reports/figures')
-        reports_dir = os.path.join(script_dir, '../reports')
+        figures_dir = os.path.join(script_dir, '../visualizations/figures')
+        visualizations_dir = os.path.join(script_dir, '../visualizations')
 
     # load a pre-trained model
     with open(model_path, 'rb') as file:
@@ -62,9 +62,9 @@ def predict(predict_data) -> None:
             'Calmar Ratio': ptf.calmar_ratio
         })
     df = pd.DataFrame(data)
-    df.to_csv(os.path.join(reports_dir, 'report.csv'), index=False)
+    df.to_csv(os.path.join(visualizations_dir, 'report.csv'), index=False)
     summary = population.summary()
-    summary.to_csv(os.path.join(reports_dir, 'summary.csv'), index=False)
+    summary.to_csv(os.path.join(visualizations_dir, 'summary.csv'), index=False)
     
     return None
 

@@ -9,11 +9,9 @@ COPY requirements.txt requirements.txt
 COPY pyproject.toml pyproject.toml 
 COPY src/ src/
 COPY data/ data/
-COPY reports/ reports/
+COPY visualizations/ visualizations/
 COPY models/ models/
 COPY notebooks/ notebooks/
-COPY reports/ reports/
-
 #  environment variables
 ENV RUNNING_IN_DOCKER=true
 

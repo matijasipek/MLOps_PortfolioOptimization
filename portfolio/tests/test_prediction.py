@@ -17,9 +17,9 @@ def test_predict():
 
     # Check that the output files were created
     script_dir = os.path.dirname(__file__)
-    figures_dir = os.path.join(script_dir, '../reports/figures')
-    reports_dir = os.path.join(script_dir, '../reports')
+    figures_dir = os.path.join(script_dir, '../visualizations/figures')
+    visualizations_dir = os.path.join(script_dir, '../visualizations')
     assert os.path.exists(os.path.join(figures_dir, 'plot_cumulative_returns.json'))
     assert os.path.exists(os.path.join(figures_dir, 'plot_composition.json'))
-    assert os.path.exists(os.path.join(reports_dir, 'report.csv'))
-    assert os.path.exists(os.path.join(reports_dir, 'summary.csv'))
+    assert os.path.exists(os.path.join(visualizations_dir, 'report.csv'))
+    assert os.path.exists(os.path.join(visualizations_dir, 'summary.csv'))

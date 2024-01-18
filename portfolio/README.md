@@ -28,7 +28,7 @@ The directory structure of the project looks like this:
 │
 ├── pyproject.toml       <- Project configuration file
 │
-├── reports              <- Generated analysis as HTML, PDF, LaTeX, etc.
+├── visualizations              <- Generated analysis as HTML, PDF, LaTeX, etc.
 │   └── figures          <- Generated graphics and figures to be used in reporting
 │
 ├── requirements.txt     <- The requirements file for reproducing the analysis environment
