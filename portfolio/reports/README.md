@@ -600,7 +600,12 @@ Due to not being able to make the cloud run work, it left us with only being abl
 monitoring which was sucsesfull. However this isn't really optimal and we believe that given more
 more time we could've made it work with clour run and we have even made a setup using a prometheus
 image conteiner that was supposed to be used for scrapping and storing the metrics in an image so
-we can have a track history of the apps metrics while it was running. ---
+we can have a track history of the apps metrics while it was running. The challenge with W&B stemmed 
+from how the code was structured: the grid search was designed in a way that it returns only the best 
+performing model out of four. As a result, only this top-performing model's metrics were monitored 
+and logged, limiting visibility into the performance of the other three models during the grid search 
+process. This made it difficult to analyze and compare the performance of all models side by side, 
+together with different metrics. ---
 
 
 
@@ -618,10 +623,10 @@ we can have a track history of the apps metrics while it was running. ---
 > *All members contributed to code by...*
 >
 > Answer:
-> Student s222736 did git, data version control, docker, unit testing, cloud
-> Student s204704 did W&B, cookiecuter, profiler, fastAPI
-> Studnet s222660 did system monitoring, docker
+
 
 --- Student s222736 did git, data version control, docker, unit testing, cloud
 Student s204704 did W&B, cookiecuter, profiler, fastAPI
-Studnet s222660 did system monitoring, docker ---
+Studnet s222660 did system monitoring, docker, cloud
+All members contributed equally when running into errors or issues that they themselfs couldn't resolve.
+For example like when running docker images, git actions, general environment issues and setups etc. ---
