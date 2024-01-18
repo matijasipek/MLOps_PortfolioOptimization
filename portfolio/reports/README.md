@@ -417,16 +417,16 @@ The profiling was implemented through cProfile module, and visualized with Snake
 > **You can take inspiration from [this figure](figures/bucket.png).**
 >
 > Answer:
-> ![gcp bucket](figures/Q19%20-%20Bucket.png)
-> ![gcp bucket2](figures/Q19%20-%20Bucket%202.png)
+> *![gcp bucket](figures/Q19%20-%20Bucket.png)*
+> *![gcp bucket2](figures/Q19%20-%20Bucket%202.png)*
 ### Question 20
 
 > **Upload one image of your GCP container registry, such that we can see the different images that you have stored.**
 > **You can take inspiration from [this figure](figures/registry.png).**
 >
 > Answer:
-> ![artifact registry](figures/Q20%20-%20Artifact%20Registry%20.png)
-> ![artifact registry](figures/Q20%20-%20Artifact%20Registry%202.png)
+>*![artifact registry](figures/Q20%20-%20Artifact%20Registry%20.png)*
+>*![artifact registry](figures/Q20%20-%20Artifact%20Registry%202.png)*
 
 ### Question 21
 
@@ -434,7 +434,7 @@ The profiling was implemented through cProfile module, and visualized with Snake
 > **your project. You can take inspiration from [this figure](figures/build.png).**
 >
 > Answer:
-> ![build history](figures/Q21%20-%20Build.png)
+>*![build history](figures/Q21%20-%20Build.png)*
 
 ### Question 22
 
@@ -466,7 +466,7 @@ However, we haven't extended this monitoring to Google Cloud, a crucial step for
 > *measure ... and ... that would inform us about this ... behaviour of our application.*
 >
 > Answer:
-> *[metrics](figures/Q23 - Metrics.png)*
+> *[metrics](figures/Q23%20-%20Metrics.png)*
 > *Yes, we successfully implemented model monitoring via Prometheus, which runs locally alongside our application.*
 > *You should run the predictor.dockerfile locally which is then going to give you the localhost url where you'll be*
 > *able to see the metrics update in realtime as docker image is being ran. The metrics displayed in the screenshot* 
@@ -493,8 +493,9 @@ However, we haven't extended this monitoring to Google Cloud, a crucial step for
 > *costing the most was ... due to ...*
 >
 > Answer:
-> S222736 - google cloud  32$, in GitHub action I had 0 minutes which is unclear to me as I had more than 40 calls push/pull with CI
-> - Artifact registry most expensive wth 28.79$ 
+> *S222736 - google cloud  32$, in GitHub action I had 0 minutes which is unclear to me as I had more than 40 calls push/pull with CI*
+> *- Artifact registry most expensive wth 28.79$*
+> *S222660 - google cloud 0$ since monitoring was ran locally, in GitHub action I had 0 also unsure as to why.* 
 
 ## Overall discussion of project
 
@@ -514,8 +515,9 @@ However, we haven't extended this monitoring to Google Cloud, a crucial step for
 > *Whenever we commit code and puch to github, it auto triggers ... and ... . From there the diagram shows ...*
 >
 > Answer:
+> *[architecture](figures/Q25%20-%20Architecture.png)*
+> **
 
---- question 25 fill here ---
 
 ### Question 26
 
@@ -528,8 +530,20 @@ However, we haven't extended this monitoring to Google Cloud, a crucial step for
 > *The biggest challenges in the project was using ... tool to do ... . The reason for this was ...*
 >
 > Answer:
+> *During implementation of GitHub Actions Cil most of the time we lost was on the connection.*
+> *between the DVC and Github. First we tried with creating a service key in the bucket and adding it to *
+> *the GH secrets, but it did not work; so we had to give public permission to the bucket and we were*
+> *able to pass the tests in the CI. Next, during the build phase, we had a problem with the architecture*
+> *due to the difference between the architecture of Mac M2 and the Cloud Build system, and it was*
+> *fixed after giving it explicit architecture on which to build on (--platform=linux/amd64).*
+> *Unfortunately, the Cloud Run was not able to deploy the model and we could not make it work.*
+> *Due to not being able to make the cloud run work, it left us with only being able to setup local*
+> *monitoring which was sucsesfull. However this isn't really optimal and we believe that given more*
+> *more time we could've made it work with clour run and we have even made a setup using a prometheus*
+> *image conteiner that was supposed to be used for scrapping and storing the metrics in an image so*
+> *we can have a track history of the apps metrics while it was running.*
 
---- question 26 fill here ---
+
 
 ### Question 27
 
