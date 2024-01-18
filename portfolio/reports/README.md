@@ -370,13 +370,9 @@ The table displays the cumulative returns (daily) over period between 2013-2023.
 >
 > Answer:
 
-```markdown
-![architecture](figures/Q16profiling.jpg)
-```
-
 
 --- When running the code locally, the built-in debugger in Visual Studio code was used. Additionally, simple print statements were added to code blocks, which was sufficient enough, as the code itself was not very complex.
-The profiling was implemented through cProfile module, and visualized with SnakeViz. The profiling run was conducted on the train_model.py script and the results can be visible above. ---
+The profiling was implemented through cProfile module, and visualized with SnakeViz. The profiling run was conducted on the train_model.py script and the results can be visible **[here](figures/Q16profiling.jpg)**. ---
 
 ## Working in the cloud
 
