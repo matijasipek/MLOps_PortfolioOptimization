@@ -105,18 +105,18 @@ end of the project.
 >
 > Answer:
 
---- question 1 fill here ---
+--- 11 ---
 
 ### Question 2
 > **Enter the study number for each member in the group**
 >
 > Example:
 >
-> *sXXXXXX, sXXXXXX, sXXXXXX*
+> *sxxxx, sxxxxx, sxxxx*
 >
 > Answer:
 
---- question 2 fill here ---
+--- s204704, s222736, s222660 ---
 
 ### Question 3
 > **What framework did you choose to work with and did it help you complete the project?**
@@ -129,7 +129,7 @@ end of the project.
 >
 > Answer:
 
---- question 3 fill here ---
+--- In this project we used skfolio, a Python library for portfolio optimization built on top of scikit-learn's API (https://github.com/skfolio/skfolio). The skfolio model was employed for validating the predictions and assessing portfolio performance, focusing on key metrics such as Sharpe Ratio, Conditional Value at Risk, and Calmar ratios. The framework significantly reduced the model setup and testing workload, allowing us to rely on its robust, community-tested methods. That was essential, given that the project was primarily focused on managing, deploying, and monitoring the machine learning models in a real-world operational context. ---
 
 ## Coding environment
 
@@ -148,7 +148,13 @@ end of the project.
 >
 > Answer:
 
---- question 4 fill here ---
+--- The dependencies are managed through python3 pip for managing the required packages, and DVC for the data dependencies. The 'requirements.txt' file contains all the required packgages (and its versions) necessary to run the code, while the DVC dependencies files are stored in data.dvc and models.dvc. A new team member would need to set up the following:
+
+- Clone the project's repository locally.
+- Create a virtual environment via python3
+- Activate the virtual environment (conda activate my_new_env)
+- Install the dependencies listed in the project's requirements as 'pip install -r requirements.txt'.
+- Pull the data from Google cloud by running 'dvc pull'. ---
 
 ### Question 5
 
@@ -163,7 +169,7 @@ end of the project.
 > *experiments.*
 > Answer:
 
---- question 5 fill here ---
+--- The project is initialized using the cookiecutter template for MLOps, and follows standardized structure, where `data` folder is partitioned into `processed` for ready-to-use datasets and `raw` for untouched data. The `models` directory stores trained models and related serialization files, while the `notebooks` directory contains Jupyter notebooks for exploratory analysis and result visualization. The `src` folder was extensively used for all source code, including data processing, model training, and prediction scripts, while the `reports` directory holds generated analysis as HTML and figures for reporting. The `docs` and `dockerfiles` folders are not populated as documentation, and Dockerfiles were put in different locations.  ---
 
 ### Question 6
 
@@ -174,7 +180,7 @@ end of the project.
 >
 > Answer:
 
---- question 6 fill here ---
+--- For formatting, a Cookiecutter was implemented to ensure consistency across the codebase. Maintaining code quality and format is crucial in larger projects as it enhances readability, eases collaboration among team members, and improves overall efficiency in the development process. ---
 
 ## Version control
 
@@ -229,11 +235,7 @@ end of the project.
 > *addition to the main branch. To merge code we ...*
 >
 > Answer:
-> *We did not made use of branches since our modeling process was quite simple, and we did not have a lot of coding work to do in that area.*
-> *So all of us just pushed the directly to the main branch. In general, branches help individual members work in their own environment without*
-> *possibly messing up the production version of the code; it can be understood as a separate environment which can only be merged if correct.*
-> *Also, since we were a small team, we did not use Pull requests; they are usually used to analyse and review potential changes in separate* 
-> *branches with your collaborators who can also add their own commits before you are merging with the main branch.*
+> *The use of branches and pull requests was integrated into our GitHub workflow. When a group member is making changes on his own, every change commenced with creating a    branch from the main codebase, while in a situation when all the team members were working together when implementing changes, then there was not a need to create new branches and open pull requests. Subsequently, a pull requests for merging these modifications into the main branch were initiated. These pull requests underwent a review by other team members, ensuring code quality before final approval and integration.*
 
 ### Question 10
 
@@ -299,7 +301,7 @@ end of the project.
 >
 > Answer:
 
---- question 12 fill here ---
+--- The hyperparameters are by default loaded from the configuration file src/config/params.yaml, when training the model. The configuration file (.yaml) contains the evaluation metric, n_jobs(computation is dispatched on all machine's CPUs), walk forward train and test size. The configuration file is passed to the wandb.init() function, through which hyperparameters are loaded into the training script, together with w&b project name and entity. When using the src/models/predict_model.py, a simple argparser is used to give the input string to be translated along with the checkpoint file containing the trained model weights. ---
 
 ### Question 13
 
@@ -314,7 +316,7 @@ end of the project.
 >
 > Answer:
 
---- question 13 fill here ---
+--- When loading the configuration file the hyperparameters of the model are set to the default values provided in the file. Then, the user can track which parameters are used to train the model. The reproduciblity of results is ensured, since the data is static and experiments don't include any random state. Hereby, the experiment result will always be the same, which can also be confirmed when observing results of different runs displayed in chart within w&b project. Furthermore docker images are created, to ensure that model can be run on any machine.  ---
 
 ### Question 14
 
@@ -331,7 +333,11 @@ end of the project.
 >
 > Answer:
 
---- question 14 fill here ---
+--- The first figure tracks the value of Calmar Ratio for the selected model. As seen in the figure, all the runs have the same Calmar Ratio throughout the training, since the data does not change between the runs.
+
+The second figure shows the highest obtained Calmar Ratio, which will also not change, as the data is static.
+
+The table displays the cumulative returns (daily) over period between 2013-2023.---
 
 ### Question 15
 
@@ -346,7 +352,7 @@ end of the project.
 >
 > Answer:
 
---- question 15 fill here ---
+--- Docker was utilized to execute the model's prediction script in a controlled environment, where a Docker image was built using a Dockerfile that outlined all the necessary dependencies and code. The image could then be run with the command: `docker run -it --rm -v "C:\path_to_data:/data" image-test /data/processed/X_test.csv`, where `image-test` is the name of the Docker image, and `C:\path_to_data` is the path to the dataset on the host machine. This ensured that the `X_test.csv` file was used as an argument for the prediction script within the container. The Dockerfile for this image is available at `https://github.com/AndroCrunch/MLOps_PortfolioOptimization/blob/main/portfolio/trainer.dockerfile`, showcasing the steps taken to set up the environment, install dependencies, and define the entry point for running the prediction script. ---
 
 ### Question 16
 
@@ -361,7 +367,8 @@ end of the project.
 >
 > Answer:
 
---- question 16 fill here ---
+--- When running the code locally, the built-in debugger in Visual Studio code was used. Additionally, simple print statements were added to code blocks, which was sufficient enough, as the code itself was not very complex.
+The profiling was implemented through cProfile module, and visualized with SnakeViz. The profiling run was conducted on the train_model.py script and the results can be visible here: *[architecture](figures/Q16profiling.jpg)* ---
 
 ## Working in the cloud
 
@@ -443,7 +450,9 @@ end of the project.
 >
 > Answer:
 
---- question 22 fill here ---
+--- We successfully implemented local monitoring of our deployed model using FastAPI, which tracks performance metrics and generates alerts for quick issue resolution. The sucessful run can be visible here:
+
+However, we haven't extended this monitoring to Google Cloud, a crucial step for scalability and reliability in a distributed environment, due time constraint. ---
 
 ### Question 23
 
