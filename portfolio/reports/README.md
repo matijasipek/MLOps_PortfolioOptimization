@@ -336,11 +336,11 @@ which permissions were given to the object as can be seen from
 >
 > Answer:
 
---- The first figure tracks the value of Calmar Ratio for the selected model. As seen in the figure, all the runs have the same Calmar Ratio throughout the training, since the data does not change between the runs.
+--- The first figure tracks the value of Calmar Ratio for the selected model. As seen in the **[figure](figures/Q14_W&B-1.png)**, all the runs have the same Calmar Ratio throughout the training, since the data does not change between the runs.
 
-The second figure shows the highest obtained Calmar Ratio, which will also not change, as the data is static.
+The second **[figure](figures/Q14_W&B%20-2.png)** shows the highest obtained Calmar Ratio, which will also not change, as the data is static.
 
-The table displays the cumulative returns (daily) over period between 2013-2023.---
+The **[table](figures/Q14.jpg)** displays the cumulative returns (daily) over period between 2013-2023.---
 
 ### Question 15
 
@@ -355,7 +355,7 @@ The table displays the cumulative returns (daily) over period between 2013-2023.
 >
 > Answer:
 
---- Docker was utilized to execute the model's prediction script in a controlled environment, where a Docker image was built using a Dockerfile that outlined all the necessary dependencies and code. The image could then be run with the command: `docker run -it --rm -v "C:\path_to_data:/data" image-test /data/processed/X_test.csv`, where `image-test` is the name of the Docker image, and `C:\path_to_data` is the path to the dataset on the host machine. This ensured that the `X_test.csv` file was used as an argument for the prediction script within the container. The Dockerfile for this image is available at `https://github.com/AndroCrunch/MLOps_PortfolioOptimization/blob/main/portfolio/trainer.dockerfile`, showcasing the steps taken to set up the environment, install dependencies, and define the entry point for running the prediction script. ---
+--- Docker was utilized to execute the model's prediction script in a controlled environment, where a Docker image was built using a Dockerfile that outlined all the necessary dependencies and code. The image could then be run with the command: `docker run -it --rm -v "C:\path_to_data:/data" image-test /data/processed/X_test.csv`, where `image-test` is the name of the Docker image, and `C:\path_to_data` is the path to the dataset on the host machine. This ensured that the `X_test.csv` file was used as an argument for the prediction script within the container. The Dockerfile for this image is available via [Link to Dockerfile](https://github.com/AndroCrunch/MLOps_PortfolioOptimization/blob/main/portfolio/trainer.dockerfile), showcasing the steps taken to set up the environment, install dependencies, and define the entry point for running the prediction script. ---
 
 ### Question 16
 
@@ -424,13 +424,10 @@ time on specific hardware specifications. And, this process can be setup in para
 >
 > Answer:
 
-```markdown
-![gcp bucket](figures/Q19%20-%20Bucket.png)
-```
+**[Bucket 1](figures/Q19%20-%20Bucket.png)**
 
-```markdown
-![gcp bucket2](figures/Q19%20-%20Bucket%202.png)
-```
+**[Bucket 2](figures/Q19%20-%20Bucket%202.png)**
+
 
 ### Question 20
 
@@ -440,13 +437,9 @@ time on specific hardware specifications. And, this process can be setup in para
 > Answer:
 >
 
-```markdown
-![artifact registry](figures/Q20%20-%20Artifact%20Registry%20.png)
-```
+**[Artifact Registry 1](figures/Q20%20-%20Artifact%20Registry%20.png)**
 
-```markdown
-![artifact registry](figures/Q20%20-%20Artifact%20Registry%202.png)
-```
+**[Artifact Registry 2](figures/Q20%20-%20Artifact%20Registry%202.png)**
 
 
 ### Question 21
@@ -457,9 +450,7 @@ time on specific hardware specifications. And, this process can be setup in para
 > Answer:
 >
 
-```markdown
-![build history](figures/Q21%20-%20Build.png)
-```
+**[Build history](figures/Q21%20-%20Build.png)**
 
 
 ### Question 22
@@ -476,7 +467,7 @@ time on specific hardware specifications. And, this process can be setup in para
 >
 > Answer:
 
---- We successfully implemented local monitoring of our deployed model using FastAPI, which tracks performance metrics and generates alerts for quick issue resolution. The sucessful run can be visible here:
+--- We successfully implemented local monitoring of our deployed model using FastAPI, which tracks performance metrics and generates alerts for quick issue resolution. The sucessful run can be visible **[here](figures/Q22fastapi.jpg)**:
 
 However, we haven't extended this monitoring to Google Cloud, a crucial step for scalability and reliability in a distributed environment, due time constraint. ---
 
@@ -493,10 +484,7 @@ However, we haven't extended this monitoring to Google Cloud, a crucial step for
 >
 > Answer:
 
-
-```markdown
-![metrics](figures/Q23%20-%20Metrics.png)
-```
+**[Metrics](figures/Q23%20-%20Metrics.png)**
 
 --- Yes, we successfully implemented model monitoring via Prometheus, which runs locally alongside our application.
 You should run the predictor.dockerfile locally which is then going to give you the localhost url where you'll be
@@ -525,7 +513,7 @@ indicate that Prometheus is actively scraping and recording data. Our configurat
 ---  S222736 - google cloud  32$, in GitHub action I had 0 minutes which is unclear to me as I had more than 40 calls push/pull with CI
 - Artifact registry most expensive wth 28.79$
 S222660 - google cloud 0$ since monitoring was ran locally, in GitHub action I had 0 also unsure as to why.
-S204704 - google cloud 0$, W&B 0$ desite having more that 100 runs, GitHub Actions 0$ also unexplanable. ---
+S204704 - google cloud 0$, W&B 0$ desite having more that 100 runs, GitHub Actions 0$, which is also unexplanable. ---
 
 ## Overall discussion of project
 
@@ -546,9 +534,7 @@ S204704 - google cloud 0$, W&B 0$ desite having more that 100 runs, GitHub Actio
 >
 > Answer:
 
-```markdown
-![architecture](figures/Q25%20-%20Architecture.png)
-```
+**[Architecture](figures/Q25%20-%20Architecture.png)**
 
 --- First off all we have the profiler which is running on train_model.py and shows us performance of the code,
 and cookiecuter that encompass the whole project. When training the model, the
