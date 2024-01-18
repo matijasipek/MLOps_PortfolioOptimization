@@ -192,8 +192,7 @@ end of the project.
 > *application but also ... .*
 >
 > Answer:
-
---- question 7 fill here ---
+In total we created 13 tests. They were separated into 3 sections : dataset, model training) and prediction. In the dataset module we tested if the columns match the expected, if there are NaN values, is type pandas, is file empty and then repeated for both test and train data. For the model: test if model is being initialized, if parameters are being tuned, is it able to read in the data and train, and are the models saved after training. Finally, the prediction tests: are the results and figures from predictions being saved
 
 ### Question 8
 
@@ -208,7 +207,7 @@ end of the project.
 >
 > Answer:
 
---- question 8 fill here ---
+By using framework coverage, we are able to generate the full analysis of what is covered including all the libraries and packages; and, with that we have coverage of 27% in total. However, when we look at the source files we have written we have coverage: /model.py  100%, src/predict_model.py 84%, src train_model.py 64% which is solid. If we had code coverage of 100% we would still not believe it is error free. This is because tests written can also not check everything in a mindful way, or the tests can themselves have errors. Test can miss edge cases since we are not able to think of all possibilities which can happen during run time. Also, when running on cloud vs running locally can give different results due to different architectures.
 
 ### Question 9
 
@@ -223,7 +222,7 @@ end of the project.
 >
 > Answer:
 
---- question 9 fill here ---
+We did not made use of branches since our modeling process was quite simple, and we did not have a lot of coding work to do in that area. So all of us just pushed the directly to the main branch. In general, branches help individual members work in their own environment without possibly messing up the production version of the code; it can be understood as a separate environment which can only be merged if correct. Also, since we were a small team, we did not use Pull requests; they are usually used to analyse and review potential changes in separate branches with your collaborators who can also add their own commits before you are merging with the main branch.
 
 ### Question 10
 
@@ -238,7 +237,7 @@ end of the project.
 >
 > Answer:
 
---- question 10 fill here ---
+We did have DVC in our project; since we were working with time series data more specifically with index data, it was especially useful since for our system to work we had to update the training data every day as the stock price changes constantly. Unfortunately, due to lack of time, we were not able to implement automatic subsystem which pull data everyday; however, DVC would be perfect for this. Further steps included to achieve this would be: using the new DVC data, pull data to the trainer docker image to re-train the model; and use newest data to re-predict how our model performs. In this way, we would constantly have the newest information on our portfolio performance, and recomendation for all possible changes needed
 
 ### Question 11
 
@@ -254,7 +253,10 @@ end of the project.
 >
 > Answer:
 
---- question 11 fill here ---
+The CI was setup in a single file through GitHub Actions. The CI pipeline is triggered on every push and pull requests event to the main branch; tests are run only on the latests version of ubuntu since we are running everything within docker images; the pipeline uses Python 3.10 version to accommodate all the dependencies. They are install via requirements.txt  in the portfolio directory. We had some problems with skfolio since there is no image for this library (as it is completely new v0.9), this we had to install it directly from GitHub repo; we made use of —no-cache-dir to prevent pip from caching packages. DVC is installed and a data is pulled for the tests from google cloud storage (GSC) bucket. Unit test are all developed and ran using pytest. 
+The CI pipeline does not include lifting, testing on multiple operating system and python versions. We are not using caching as build process was getting an error (same with mounting). With mounting BuildKit which enhances the speed of builds was not enabled in google cloud, so this also had to be removed. 
+Build : https://github.com/matijasipek/MLOps_PortfolioOptimization/actions/runs/7541775834/job/20529189656
+One of the main issues we had was pulling the data from the DVC; first our approach was using a service key which connected our GitHub repo with but this resulted in Anonymous caller does not have storage.objects.list access to the Google Cloud Storage bucket, no matter which permissions were given to the object as can be seen from https://github.com/matijasipek/MLOps_PortfolioOptimization/actions/runs/7502864007/job/20426370496. Unfortunately, to make it work, I gave the full public access permission to the bucket.  
 
 ## Running code and tracking experiments
 
@@ -352,7 +354,12 @@ end of the project.
 >
 > Answer:
 
---- question 17 fill here ---
+We used: Bucket, Artifact Registry, Cloud Build, Vertex AI and Cloud Run
+Bucket : We set up our DVC in the bucket and connected it to our GitHub repo
+Cloud Build: We are building and pushing our images in using this service
+Artefact Registry: In the artifact registry, after building our images are being saved here
+Vertex AI: We are creating custom jobs for each of our images (train and predict) and testing them with this service.
+Cloud Run: Used for deploying containers in “production” version so that it can be called from user side via URL / API requests
 
 ### Question 18
 
@@ -367,7 +374,9 @@ end of the project.
 >
 > Answer:
 
---- question 18 fill here ---
+We used this for testing that our project works in an new environment, but also through CloudBuild, VertexAI and Cloud Run as they all use VMs in the background. 
+By using Cloud Build which uses VMs to build and push images, and then used compute engine VMs to run Vertex AI for our machine learning tasks such that it runs jobs of containers and serves predictions. We used n1-standard-4 type VM, it has 4vCPUs and 15GB of memory, we used 1 replica count. As I have Mac M2 CPU we had a big problem when building images since the architecture in the google cloud is different.
+Further, if we had time to develop continuous new data integration with the compute engine, we could know the training and inference time on specific hardware specifications. And, this process can be setup in parallel in background.
 
 ### Question 19
 
@@ -375,9 +384,8 @@ end of the project.
 > **You can take inspiration from [this figure](figures/bucket.png).**
 >
 > Answer:
-
---- question 19 fill here ---
-
+![gcp bucket](figures/Q19%20-%20Bucket.png)
+![gcp bucket2](figures/Q19%20-%20Bucket%202.png)
 ### Question 20
 
 > **Upload one image of your GCP container registry, such that we can see the different images that you have stored.**
@@ -385,7 +393,8 @@ end of the project.
 >
 > Answer:
 
---- question 20 fill here ---
+![artifact registry](figures/Q20%20-%20Artifact%20Registry%20.png)
+![artifact registry](figures/Q20%20-%20Artifact%20Registry%202.png)
 
 ### Question 21
 
@@ -394,7 +403,7 @@ end of the project.
 >
 > Answer:
 
---- question 21 fill here ---
+![build history](figures/Q21%20-%20Build.png)
 
 ### Question 22
 
@@ -439,7 +448,8 @@ end of the project.
 >
 > Answer:
 
---- question 24 fill here ---
+S222736 - google cloud  32$, in GitHub action I had 0 minutes which is unclear to me as I had more than 40 calls push/pull with CI
+- Artifact registry most expensive wth 28.79$ 
 
 ## Overall discussion of project
 
