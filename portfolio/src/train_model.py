@@ -74,6 +74,9 @@ class ModelTrainer:
             pickle.dump(self.benchmark, file)
 
 def main():
+
+    wandb.login(key="786d9a30ddbe8d6b543db95e7d0e64433c61c0c2")
+
     # Initialize the model trainer
     trainer = ModelTrainer()
 
