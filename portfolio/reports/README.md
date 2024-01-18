@@ -418,8 +418,8 @@ end of the project.
 > **You can take inspiration from [this figure](figures/registry.png).**
 >
 > Answer:
-> *![artifact registry](figures/Q20%20-%20Artifact%20Registry%20.png)*
->* ![artifact registry](figures/Q20%20-%20Artifact%20Registry%202.png)*
+>*![artifact registry](figures/Q20%20-%20Artifact%20Registry%20.png)*
+>*![artifact registry](figures/Q20%20-%20Artifact%20Registry%202.png)*
 
 ### Question 21
 
@@ -427,7 +427,7 @@ end of the project.
 > **your project. You can take inspiration from [this figure](figures/build.png).**
 >
 > Answer:
->* ![build history](figures/Q21%20-%20Build.png)*
+>*![build history](figures/Q21%20-%20Build.png)*
 
 ### Question 22
 
