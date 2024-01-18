@@ -8,8 +8,15 @@ from train_model import ModelTrainer
 from models.model import Models
 from sklearn.model_selection import GridSearchCV
 from skfolio.model_selection import  WalkForward
+import wandb
+
+
+@pytest.fixture(autouse=True)
+def setup_wandb():
+    wandb.login(key="786d9a30ddbe8d6b543db95e7d0e64433c61c0c2")
 
 def test_model_initialization():
+
     trainer = ModelTrainer()
     assert isinstance(trainer.models, Models)
     assert trainer.model_stacking is not None

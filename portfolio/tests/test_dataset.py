@@ -1,6 +1,8 @@
 import pandas as pd
 import os
 from tests import _PATH_DATA
+import pytest
+
 
 def test_dataframe_type():
     dataset = pd.read_csv(os.path.join(_PATH_DATA+'/processed/', "X_train.csv"))
