@@ -1,11 +1,16 @@
 steps:
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/mlops-411012/trainer', '-f', 'trainer.dockerfile', '.']
+    args: ['build', '--platform=linux/amd64', '-t', 'gcr.io/mlops-411012/trainer:amd64', '-f', 'trainer.dockerfile', '.']
     dir: 'portfolio'
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/mlops-411012/trainer']
+    args: ['push', 'gcr.io/mlops-411012/trainer:amd64']
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/mlops-411012/predict', '-f', 'predict.dockerfile', '.']
+    args: ['build', '--platform=linux/amd64', '-t', 'gcr.io/mlops-411012/predict:amd64', '-f', 'predict.dockerfile', '.']
     dir: 'portfolio'
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/mlops-411012/predict']
+    args: ['push', 'gcr.io/mlops-411012/predict:amd64']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '--platform=linux/amd64', '-t', 'gcr.io/mlops-411012/prometheus:amd64', '-f', 'prometheus.dockerfile', '.']
+    dir: 'portfolio'
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/mlops-411012/prometheus:amd64']

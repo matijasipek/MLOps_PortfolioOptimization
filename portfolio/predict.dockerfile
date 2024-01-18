@@ -16,7 +16,6 @@ COPY notebooks/ notebooks/
 RUN mkdir -p /data/processed
 COPY uploads/X_test.csv /data/processed/X_test.csv
 
-
 #  environment variables
 ENV RUNNING_IN_DOCKER=true
 
