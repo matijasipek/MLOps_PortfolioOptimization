@@ -424,6 +424,19 @@ end of the project.
 > *measure ... and ... that would inform us about this ... behaviour of our application.*
 >
 > Answer:
+> *[metrics](figures/Q23 - Metrics.png)*
+> *Yes, we successfully implemented model monitoring via Prometheus, which runs locally alongside our application.*
+> *You should run the predictor.dockerfile locally which is then going to give you the localhost url where you'll be*
+> *able to see the metrics update in realtime as docker image is being ran. The metrics displayed in the screenshot* 
+> *indicate that Prometheus is actively scraping and recording data. Our configuration tracks several important indicators:* 
+> - **Memory Usage**: Measures the virtual and resident memory of the application to prevent leaks and optimize resource allocation.
+> - **CPU Utilization**: Monitors the CPU time consumed by the application, enabling us to assess and improve processing efficiency.
+> - **File Descriptors**: Keeps count of open file descriptors to avoid reaching system limits that could lead to failures.
+> - **Model-Specific Metrics**:
+>     - *Total Predictions Made*: Shows us the demand on the model and its throughput.
+>     - *Prediction Errors*: Used for detecting anomalies in the model's performance which might indicate data drift or model degradation.
+>     - *Model Load Time*: Helps ensure the model is loaded efficiently and remains responsive to prediction requests.
+
 
 --- question 23 fill here ---
 
