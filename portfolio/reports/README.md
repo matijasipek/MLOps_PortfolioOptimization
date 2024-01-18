@@ -198,10 +198,10 @@ end of the project.
 > *application but also ... .*
 >
 > Answer:
-> *In total we created **13 tests**. They were separated into 3 sections : **dataset**, **model training**, and **prediction**. In the dataset*
-> *module we tested if the columns match the expected, if there are NaN values, is type pandas, is file empty and then repeated for both test*
-> *and train data. For the model: test if model is being initialized, if parameters are being tuned, is it able to read in the data and train,*
-> *and are the models saved after training. Finally, the prediction tests: are the results and figures from predictions being saved.*
+
+--- In total we created **13 tests**. They were separated into 3 sections : **dataset**, **model training**, and **prediction**. In the dataset
+module we tested if the columns match the expected, if there are NaN values, is type pandas, is file empty and then repeated for both test
+and train data. For the model: test if model is being initialized, if parameters are being tuned, is it able to read in the data and train, and are the models saved after training. Finally, the prediction tests: are the results and figures from predictions being saved. ---
 
 
 ### Question 8
@@ -216,12 +216,12 @@ end of the project.
 > *code and even if we were then...*
 >
 > Answer:
-> *By using framework coverage, we are able to generate the full analysis of what is covered including all the libraries and packages; and, with* 
-> *that we have coverage of **27%** in total. However, when we look at the source files we have written we have coverage: `/model.py`  **100%**,
-> *`src/predict_model.py` **84%**, `src/train_model.py` **64%** which is solid. If we had code coverage of **100%** we would still not believe it*
-> *is error free. This is because tests written can also not check everything in a mindful way, or the tests can themselves have errors.*
-> *Tests can miss edge cases since we are not able to think of all possibilities which can happen during run time.*
-> *Also, when running on cloud vs running locally can give different results due to different architectures.*
+>
+---  By using framework coverage, we are able to generate the full analysis of what is covered including all the libraries and packages; and, with that we have coverage of **27%** in total. However, when we look at the source files we have written we have coverage: `/model.py`  **100%**,
+`src/predict_model.py` **84%**, `src/train_model.py` **64%** which is solid. If we had code coverage of **100%** we would still not believe it
+is error free. This is because tests written can also not check everything in a mindful way, or the tests can themselves have errors.
+Tests can miss edge cases since we are not able to think of all possibilities which can happen during run time.
+Also, when running on cloud vs running locally can give different results due to different architectures. ---
 
 ### Question 9
 
@@ -235,7 +235,8 @@ end of the project.
 > *addition to the main branch. To merge code we ...*
 >
 > Answer:
-> *The use of branches and pull requests was integrated into our GitHub workflow. When a group member is making changes on his own, every change commenced with creating a    branch from the main codebase, while in a situation when all the team members were working together when implementing changes, then there was not a need to create new branches and open pull requests. Subsequently, a pull requests for merging these modifications into the main branch were initiated. These pull requests underwent a review by other team members, ensuring code quality before final approval and integration.*
+> 
+--- The use of branches and pull requests was integrated into our GitHub workflow. When a group member is making changes on his own, every change commenced with creating a branch from the main codebase, while in a situation when all the team members were working together when implementing changes, then there was not a need to create new branches and open pull requests. Subsequently, a pull requests for merging these modifications into the main branch were initiated. These pull requests underwent a review by other team members, ensuring code quality before final approval and integration. ---
 
 ### Question 10
 
@@ -249,12 +250,13 @@ end of the project.
 > *pipeline*
 >
 > Answer:
-> *We did have **DVC** in our project; since we were working with time series data more specifically with index data, it was especially useful*
-> *since for our system to work we had to update the training data every day as the stock price changes constantly. *
-> *Unfortunately, due to lack of time, we were not able to implement automatic subsystem which pull data everyday; however, **DVC** would be *
-> *perfect for this. Further steps included to achieve this would be: using the new **DVC** data, pull data to the trainer docker image to *
-> *re-train the model; and use newest data to re-predict how our model performs.*
-> *In this way, we would constantly have the newest information on our portfolio performance, and recommendation for all possible changes needed.*
+
+--- We did have **DVC** in our project; since we were working with time series data more specifically with index data, it was especially useful
+since for our system to work we had to update the training data every day as the stock price changes constantly. 
+Unfortunately, due to lack of time, we were not able to implement automatic subsystem which pull data everyday; however, **DVC** would be 
+perfect for this. Further steps included to achieve this would be: using the new **DVC** data, pull data to the trainer docker image to 
+re-train the model; and use newest data to re-predict how our model performs.
+In this way, we would constantly have the newest information on our portfolio performance, and recommendation for all possible changes needed. ---
 
 ### Question 11
 
@@ -269,20 +271,21 @@ end of the project.
 > *... . In particular for our ..., we used ... .An example of a triggered workflow can be seen here: <weblink>*
 >
 > Answer:
-> *The CI was setup in a single file through **GitHub Actions**. The CI pipeline is triggered on every push and pull requests event to the main *
-> *branch; tests are run only on the latest version of Ubuntu since we are running everything within docker images; the pipeline uses **Python 3.*
-> *10** version to accommodate all the dependencies. They are installed via `requirements.txt` in the portfolio directory. We had some problems *
-> *with `skfolio` since there is no image for this library (as it is completely new v0.9), thus we had to install it directly from GitHub repo; *
-> *we made use of `—no-cache-dir` to prevent pip from caching packages. **DVC** is installed and data is pulled for the tests from Google Cloud *
-> *Storage (GCS) bucket. Unit tests are all developed and ran using **pytest**. *
-> * The CI pipeline does not include linting, testing on multiple operating system and Python versions. We are not using caching as the build *
-> *process was getting an error (same with mounting). With mounting, BuildKit which enhances the speed of builds was not enabled in Google Cloud,*
-> *so this also had to be removed. *
-> *Build : [Link to Build](https://github.com/matijasipek/MLOps_PortfolioOptimization/actions/runs/7541775834/job/20529189656)*
-> *One of the main issues we had was pulling the data from the **DVC**; first our approach was using a service key which connected our GitHub *
-> *repo with but this resulted in `Anonymous caller does not have storage.objects.list access` to the Google Cloud Storage bucket, no matter *
-> *which permissions were given to the object as can be seen from *
-> *[Link to Issue](https://github.com/matijasipek/MLOps_PortfolioOptimization/actions/runs/7502864007/job/20426370496). Unfortunately, to make it work, I gave the full public access permission to the bucket.*
+>
+--- The CI was setup in a single file through **GitHub Actions**. The CI pipeline is triggered on every push and pull requests event to the main 
+branch; tests are run only on the latest version of Ubuntu since we are running everything within docker images; the pipeline uses **Python 3.
+10** version to accommodate all the dependencies. They are installed via `requirements.txt` in the portfolio directory. We had some problems 
+with `skfolio` since there is no image for this library (as it is completely new v0.9), thus we had to install it directly from GitHub repo; 
+we made use of `—no-cache-dir` to prevent pip from caching packages. **DVC** is installed and data is pulled for the tests from Google Cloud 
+Storage (GCS) bucket. Unit tests are all developed and ran using **pytest**. *
+The CI pipeline does not include linting, testing on multiple operating system and Python versions. We are not using caching as the build 
+process was getting an error (same with mounting). With mounting, BuildKit which enhances the speed of builds was not enabled in Google Cloud,
+so this also had to be removed. 
+Build : [Link to Build](https://github.com/matijasipek/MLOps_PortfolioOptimization/actions/runs/7541775834/job/20529189656)
+One of the main issues we had was pulling the data from the **DVC**; first our approach was using a service key which connected our GitHub 
+repo with but this resulted in `Anonymous caller does not have storage.objects.list access` to the Google Cloud Storage bucket, no matter 
+which permissions were given to the object as can be seen from 
+[Link to Issue](https://github.com/matijasipek/MLOps_PortfolioOptimization/actions/runs/7502864007/job/20426370496). Unfortunately, to make it work, I gave the full public access permission to the bucket. ---
 
 ## Running code and tracking experiments
 
@@ -367,8 +370,13 @@ The table displays the cumulative returns (daily) over period between 2013-2023.
 >
 > Answer:
 
+```markdown
+![architecture](figures/Q16profiling.jpg)
+```
+
+
 --- When running the code locally, the built-in debugger in Visual Studio code was used. Additionally, simple print statements were added to code blocks, which was sufficient enough, as the code itself was not very complex.
-The profiling was implemented through cProfile module, and visualized with SnakeViz. The profiling run was conducted on the train_model.py script and the results can be visible here: *[architecture](figures/Q16profiling.jpg)* ---
+The profiling was implemented through cProfile module, and visualized with SnakeViz. The profiling run was conducted on the train_model.py script and the results can be visible above. ---
 
 ## Working in the cloud
 
@@ -384,12 +392,13 @@ The profiling was implemented through cProfile module, and visualized with Snake
 > *We used the following two services: Engine and Bucket. Engine is used for... and Bucket is used for...*
 >
 > *Answer:*
-> *We used: Bucket, Artifact Registry, Cloud Build, Vertex AI and Cloud Run*
-> *Bucket : We set up our DVC in the bucket and connected it to our GitHub repo*
-> *Cloud Build: We are building and pushing our images in using this service*
-> *Artefact Registry: In the artifact registry, after building our images are being saved here*
-> *Vertex AI: We are creating custom jobs for each of our images (train and predict) and testing them with this service.*
-> *Cloud Run: Used for deploying containers in “production” version so that it can be called from user side via URL / API requests*
+
+--- We used: Bucket, Artifact Registry, Cloud Build, Vertex AI and Cloud Run
+Bucket : We set up our DVC in the bucket and connected it to our GitHub repo
+Cloud Build: We are building and pushing our images in using this service
+Artefact Registry: In the artifact registry, after building our images are being saved here
+Vertex AI: We are creating custom jobs for each of our images (train and predict) and testing them with this service.
+Cloud Run: Used for deploying containers in “production” version so that it can be called from user side via URL / API requests ---
 
 ### Question 18
 
@@ -403,13 +412,14 @@ The profiling was implemented through cProfile module, and visualized with Snake
 > *using a custom container: ...*
 >
 > Answer:
->*We used this for testing that our project works in an new environment, but also through CloudBuild, VertexAI and Cloud Run as they all use VMs*
->*in the background. *
-> *By using Cloud Build which uses VMs to build and push images, and then used compute engine VMs to run Vertex AI for our machine learning tasks*
-> *such that it runs jobs of containers and serves predictions. We used n1-standard-4 type VM, it has 4vCPUs and 15GB of memory, we used 1 *
-> *replica count. As I have Mac M2 CPU we had a big problem when building images since the architecture in the google cloud is different.*
-> *Further, if we had time to develop continuous new data integration with the compute engine, we could know the training and inference*
-> *time on specific hardware specifications. And, this process can be setup in parallel in background.*
+
+--- We used this for testing that our project works in an new environment, but also through CloudBuild, VertexAI and Cloud Run as they all use VMs
+in the background. 
+By using Cloud Build which uses VMs to build and push images, and then used compute engine VMs to run Vertex AI for our machine learning tasks
+such that it runs jobs of containers and serves predictions. We used n1-standard-4 type VM, it has 4vCPUs and 15GB of memory, we used 1 
+replica count. As I have Mac M2 CPU we had a big problem when building images since the architecture in the google cloud is different.
+Further, if we had time to develop continuous new data integration with the compute engine, we could know the training and inference
+time on specific hardware specifications. And, this process can be setup in parallel in background. ---
 
 ### Question 19
 
@@ -466,21 +476,23 @@ However, we haven't extended this monitoring to Google Cloud, a crucial step for
 > *measure ... and ... that would inform us about this ... behaviour of our application.*
 >
 > Answer:
-> *[metrics](figures/Q23%20-%20Metrics.png)*
-> *Yes, we successfully implemented model monitoring via Prometheus, which runs locally alongside our application.*
-> *You should run the predictor.dockerfile locally which is then going to give you the localhost url where you'll be*
-> *able to see the metrics update in realtime as docker image is being ran. The metrics displayed in the screenshot* 
-> *indicate that Prometheus is actively scraping and recording data. Our configuration tracks several important indicators:* 
-> - **Memory Usage**: Measures the virtual and resident memory of the application to prevent leaks and optimize resource allocation.
-> - **CPU Utilization**: Monitors the CPU time consumed by the application, enabling us to assess and improve processing efficiency.
-> - **File Descriptors**: Keeps count of open file descriptors to avoid reaching system limits that could lead to failures.
-> - **Model-Specific Metrics**:
->     - *Total Predictions Made*: Shows us the demand on the model and its throughput.
->     - *Prediction Errors*: Used for detecting anomalies in the model's performance which might indicate data drift or model degradation.
->     - *Model Load Time*: Helps ensure the model is loaded efficiently and remains responsive to prediction requests.
 
 
---- question 23 fill here ---
+```markdown
+![metrics](figures/Q23%20-%20Metrics.png)
+```
+
+--- Yes, we successfully implemented model monitoring via Prometheus, which runs locally alongside our application.
+You should run the predictor.dockerfile locally which is then going to give you the localhost url where you'll be
+able to see the metrics update in realtime as docker image is being ran. The metrics displayed in the screenshot
+indicate that Prometheus is actively scraping and recording data. Our configuration tracks several important indicators:
+- Memory Usage: Measures the virtual and resident memory of the application to prevent leaks and optimize resource allocation.
+- CPU Utilization: Monitors the CPU time consumed by the application, enabling us to assess and improve processing efficiency.
+- File Descriptors: Keeps count of open file descriptors to avoid reaching system limits that could lead to failures.
+- Model-Specific Metrics:
+   - Total Predictions Made: Shows us the demand on the model and its throughput.
+   - Prediction Errors: Used for detecting anomalies in the model's performance which might indicate data drift or model degradation.
+   - Model Load Time: Helps ensure the model is loaded efficiently and remains responsive to prediction requests. ---
 
 ### Question 24
 
@@ -493,9 +505,11 @@ However, we haven't extended this monitoring to Google Cloud, a crucial step for
 > *costing the most was ... due to ...*
 >
 > Answer:
-> *S222736 - google cloud  32$, in GitHub action I had 0 minutes which is unclear to me as I had more than 40 calls push/pull with CI*
-> *- Artifact registry most expensive wth 28.79$*
-> *S222660 - google cloud 0$ since monitoring was ran locally, in GitHub action I had 0 also unsure as to why.* 
+
+---  S222736 - google cloud  32$, in GitHub action I had 0 minutes which is unclear to me as I had more than 40 calls push/pull with CI
+- Artifact registry most expensive wth 28.79$
+S222660 - google cloud 0$ since monitoring was ran locally, in GitHub action I had 0 also unsure as to why.
+S204704 - google cloud 0$, W&B 0$ desite having more that 100 runs, GitHub Actions 0$ also unexplanable. ---
 
 ## Overall discussion of project
 
@@ -515,28 +529,32 @@ However, we haven't extended this monitoring to Google Cloud, a crucial step for
 > *Whenever we commit code and puch to github, it auto triggers ... and ... . From there the diagram shows ...*
 >
 > Answer:
-> *[architecture](figures/Q25%20-%20Architecture.png)*
-> *First off all we have the profiler which is running on train_model.py and shows us performance of the code,* 
-> *and cookiecuter that encompass the whole project. When training the model, the*
-> *first entry point is the W&B. It shows us the relevant*
-> *model parameters which can be seen in set up charts.*
-> *All of our data is stored in a google bucket via DVC*
-> *that is being referenced through GitHub. Every time*
-> *we make a change to the code i.e commit/push, we trigger*
-> *GitHub Actions. This triggers the unittesting module and*
-> *if it's sucesessfull it will trigger the google cloud build.*
-> *Through the build process we monitor it using Prometheus*
-> *and when it finishes it creates a docker image which is*
-> *saved in the Artifact Registry. Here we have several different images: The training image, the predict image*
-> *and the prometheus monitoring image. Then we are using VertexAI*
-> *to grab the models from the artifact registry and then do*
-> *inference. Unfortunantly we weren't able to deploy the model*
-> *in the cloud, but when testing locally we were able to get*
-> *metric results. In the local version we have a designated folder called visualisations which saves the final* 
-> *results in addition to printing. We do however have everything set up*
-> *including a prometheus sidecontainer, which would store*
-> *this metrics.*
->
+
+```markdown
+![architecture](figures/Q25%20-%20Architecture.png)
+```
+
+--- First off all we have the profiler which is running on train_model.py and shows us performance of the code,
+and cookiecuter that encompass the whole project. When training the model, the
+first entry point is the W&B. It shows us the relevant
+model parameters which can be seen in set up charts.
+All of our data is stored in a google bucket via DVC
+that is being referenced through GitHub. Every time
+we make a change to the code i.e commit/push, we trigger
+GitHub Actions. This triggers the unittesting module and
+if it's sucesessfull it will trigger the google cloud build.
+Through the build process we monitor it using Prometheus
+and when it finishes it creates a docker image which is
+saved in the Artifact Registry. Here we have several different images: The training image, the predict image
+and the prometheus monitoring image. Then we are using VertexAI
+to grab the models from the artifact registry and then do
+inference. Unfortunantly we weren't able to deploy the model
+in the cloud, but when testing locally we were able to get
+metric results. In the local version we have a designated folder called visualisations which saves the final
+results in addition to printing. We do however have everything set up
+including a prometheus sidecontainer, which would store
+this metrics. ---
+
 
 
 ### Question 26
@@ -550,18 +568,19 @@ However, we haven't extended this monitoring to Google Cloud, a crucial step for
 > *The biggest challenges in the project was using ... tool to do ... . The reason for this was ...*
 >
 > Answer:
-> *During implementation of GitHub Actions Cil most of the time we lost was on the connection.*
-> *between the DVC and Github. First we tried with creating a service key in the bucket and adding it to *
-> *the GH secrets, but it did not work; so we had to give public permission to the bucket and we were*
-> *able to pass the tests in the CI. Next, during the build phase, we had a problem with the architecture*
-> *due to the difference between the architecture of Mac M2 and the Cloud Build system, and it was*
-> *fixed after giving it explicit architecture on which to build on (--platform=linux/amd64).*
-> *Unfortunately, the Cloud Run was not able to deploy the model and we could not make it work.*
-> *Due to not being able to make the cloud run work, it left us with only being able to setup local*
-> *monitoring which was sucsesfull. However this isn't really optimal and we believe that given more*
-> *more time we could've made it work with clour run and we have even made a setup using a prometheus*
-> *image conteiner that was supposed to be used for scrapping and storing the metrics in an image so*
-> *we can have a track history of the apps metrics while it was running.*
+
+--- During implementation of GitHub Actions Cil most of the time we lost was on the connection.
+between the DVC and Github. First we tried with creating a service key in the bucket and adding it to 
+the GH secrets, but it did not work; so we had to give public permission to the bucket and we were
+able to pass the tests in the CI. Next, during the build phase, we had a problem with the architecture
+due to the difference between the architecture of Mac M2 and the Cloud Build system, and it was
+fixed after giving it explicit architecture on which to build on (--platform=linux/amd64).
+Unfortunately, the Cloud Run was not able to deploy the model and we could not make it work.
+Due to not being able to make the cloud run work, it left us with only being able to setup local
+monitoring which was sucsesfull. However this isn't really optimal and we believe that given more
+more time we could've made it work with clour run and we have even made a setup using a prometheus
+image conteiner that was supposed to be used for scrapping and storing the metrics in an image so
+we can have a track history of the apps metrics while it was running. ---
 
 
 
@@ -579,8 +598,10 @@ However, we haven't extended this monitoring to Google Cloud, a crucial step for
 > *All members contributed to code by...*
 >
 > Answer:
-> *Student s222736 did git, data version control, docker, unit testing, cloud*
-> *Student s204704 did W&B, cookiecuter, profiler, fastAPI*
-> *Studnet s222660 did system monitoring, docker*
+> Student s222736 did git, data version control, docker, unit testing, cloud
+> Student s204704 did W&B, cookiecuter, profiler, fastAPI
+> Studnet s222660 did system monitoring, docker
 
---- question 27 fill here ---
+--- Student s222736 did git, data version control, docker, unit testing, cloud
+Student s204704 did W&B, cookiecuter, profiler, fastAPI
+Studnet s222660 did system monitoring, docker ---
